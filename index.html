@@ -1,999 +1,1026 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akhil S. G. — Researcher & Social Entrepreneur</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-<html lang="en">
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-alt: #f7f7f6;
+  --text: #2c3e50;
+  --text-light: #5a6c7d;
+  --text-muted: #8e9baa;
+  --accent: #B71C1C;
+  --accent-light: #fceaea;
+  --accent-dark: #8B0000;
+  --border: #e8ecf1;
+  --card-bg: #ffffff;
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08);
+  --nav-bg: rgba(255,255,255,0.92);
+}
 
-    <head>
+[data-theme="dark"] {
+  --bg: #1a1f2e;
+  --bg-alt: #222838;
+  --text: #d4dae3;
+  --text-light: #9aa5b4;
+  --text-muted: #6b7a8d;
+  --accent: #D32F2F;
+  --accent-light: rgba(211,47,47,0.1);
+  --accent-dark: #B71C1C;
+  --border: #2d3548;
+  --card-bg: #222838;
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.3);
+  --nav-bg: rgba(26,31,46,0.92);
+}
 
-        <title>Akhil SG</title>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-        <meta name="description" content="">
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); }
 
-        <!-- Google Font: Lato -->
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s, border-color 0.3s;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 2.5rem;
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-name {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 700; font-size: 1.1rem; color: var(--text);
+}
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a {
+  color: var(--text-light); font-size: 0.85rem; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.theme-btn {
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  width: 34px; height: 34px; cursor: pointer; font-size: 0.9rem;
+  display: grid; place-items: center; color: var(--text-light); transition: all 0.2s;
+}
+.theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger svg { stroke: var(--text); }
 
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+/* ── LAYOUT ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
+section { padding: 5rem 0; }
+.section-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem;
+}
+.section-title {
+  font-family: 'Source Serif 4', serif; font-size: 1.8rem;
+  font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em;
+}
+.section-subtitle {
+  color: var(--text-light); font-size: 0.95rem; margin-bottom: 2.5rem; max-width: 680px;
+}
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-        <!-- Nivo Lightbox-->
-        <link rel="stylesheet" href="assets/plugins/nivo-lightbox/nivo-lightbox.css" />
-        <link rel="stylesheet" href="assets/plugins/nivo-lightbox/themes/default/default.css" />
+/* ── HERO ── */
+.hero { padding: 10rem 0 5rem; text-align: center; }
+.hero-avatar {
+  width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--border);
+  margin: 0 auto 1.5rem; overflow: hidden; opacity: 0; animation: fadeIn 0.6s 0.1s forwards;
+}
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.hero h1 {
+  font-family: 'Source Serif 4', serif; font-size: 2.8rem; font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: 0.25rem; opacity: 0; animation: fadeIn 0.6s 0.2s forwards;
+}
+.hero-fullname {
+  color: var(--text-muted); font-size: 0.85rem; font-style: italic;
+  margin-bottom: 0.5rem; opacity: 0; animation: fadeIn 0.6s 0.25s forwards;
+}
+.hero-role {
+  color: var(--accent); font-size: 1rem; font-weight: 500; letter-spacing: 0.03em;
+  margin-bottom: 1.25rem; opacity: 0; animation: fadeIn 0.6s 0.35s forwards;
+}
+.hero-bio {
+  max-width: 680px; margin: 0 auto 2rem; color: var(--text-light);
+  font-size: 1.05rem; line-height: 1.8; opacity: 0; animation: fadeIn 0.6s 0.45s forwards;
+}
+.hero-actions {
+  display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeIn 0.6s 0.55s forwards;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.4rem;
+  border-radius: 6px; font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s var(--ease);
+}
+.btn-fill { background: var(--accent); color: #fff; }
+.btn-fill:hover { background: var(--accent-dark); color: #fff; transform: translateY(-1px); }
+.hero-links {
+  display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;
+  opacity: 0; animation: fadeIn 0.6s 0.65s forwards;
+}
+.hero-links a { color: var(--text-muted); font-size: 0.82rem; transition: color 0.2s; }
+.hero-links a:hover { color: var(--accent); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        <!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/main.css">
-        
-        <!-- Themes -->
-        <link rel="stylesheet" href="assets/css/themes.light.css">
-        <!--<link rel="stylesheet" href="assets/css/themes.dark.css">-->
-        
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="assets/css/custom.css">
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+.about-text { color: var(--text-light); font-size: 0.95rem; line-height: 1.8; }
+.about-text p + p { margin-top: 1rem; }
+.about-details { display: grid; gap: 0.75rem; }
+.detail-item {
+  padding: 1rem 1.25rem; background: var(--bg-alt); border-radius: 8px;
+  border: 1px solid var(--border); transition: border-color 0.2s;
+}
+.detail-item:hover { border-color: var(--accent); }
+.detail-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+.detail-value { font-weight: 500; font-size: 0.92rem; }
 
-        <!-- jQuery -->
-        <script src="assets/js/jquery.min.js"></script>
+/* ── RESEARCH INTERESTS ── */
+.interests-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.interest-tag {
+  padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.82rem; font-weight: 500;
+  background: var(--accent-light); color: var(--accent); border: 1px solid transparent;
+  transition: all 0.2s;
+}
+.interest-tag:hover { border-color: var(--accent); }
 
-        <!-- dense.js (Retina plugin) -->
-        <script src="assets/js/dense.js"></script>
+/* ── FILTER PILLS ── */
+.filter-pills { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.filter-btn {
+  padding: 0.4rem 1rem; border-radius: 20px; border: 1px solid var(--border);
+  background: transparent; color: var(--text-light); font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.2s;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-        <!-- Nivo Lightbox -->
-        <script src="assets/plugins/nivo-lightbox/nivo-lightbox.min.js"></script>
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 1.75rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border);
+}
+.tl-item { position: relative; padding-bottom: 2rem; }
+.tl-item::before {
+  content: ''; position: absolute; left: -1.75rem; top: 0.55rem;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--accent); transform: translateX(-4px);
+}
+.tl-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; color: var(--text-muted); margin-bottom: 0.15rem; }
+.tl-role { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.1rem; }
+.tl-org { color: var(--accent); font-size: 0.88rem; font-weight: 500; }
+.tl-loc { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 0.4rem; }
+.tl-bullets { display: none; color: var(--text-light); font-size: 0.88rem; line-height: 1.7; margin-top: 0.5rem; padding-left: 1rem; list-style: disc; }
+.tl-bullets.open { display: block; }
+.tl-bullets li + li { margin-top: 0.3rem; }
+.tl-toggle { background: none; border: none; color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; cursor: pointer; padding: 0; margin-top: 0.25rem; }
+.tl-toggle:hover { text-decoration: underline; }
 
-        <!-- ScrollReveal -->
-        <script src="assets/js/scrollreveal.min.js"></script>
+/* ── COLLAPSIBLE SECTION ── */
+.section-collapse {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s var(--ease);
+}
+.section-collapse.expanded {
+  max-height: 5000px;
+}
+.section-expand-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  padding: 0.5rem 1.2rem; font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.85rem; font-weight: 500; color: var(--text-light);
+  cursor: pointer; transition: all 0.2s; margin-top: 0.5rem;
+}
+.section-expand-btn:hover { border-color: var(--accent); color: var(--accent); }
+.section-expand-btn .arrow { transition: transform 0.3s; display: inline-block; }
+.section-expand-btn.open .arrow { transform: rotate(180deg); }
 
-        <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
+/* ── CARDS GRID ── */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; }
+.card {
+  padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; transition: all 0.25s var(--ease);
+}
+.card:hover { border-color: var(--accent); box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+.card-title { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.2rem; }
+.card-sub { color: var(--accent); font-size: 0.78rem; font-weight: 500; margin-bottom: 0.6rem; }
+.card-desc { color: var(--text-light); font-size: 0.85rem; line-height: 1.65; margin-bottom: 0.9rem; }
+.card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.card-tag {
+  padding: 0.2rem 0.55rem; border-radius: 4px; font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem; color: var(--accent); background: var(--accent-light);
+}
 
-    </head>
+/* ── PUBLICATIONS ── */
+.pub-list { list-style: none; }
+.pub-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.pub-item:last-child { border-bottom: none; }
+.pub-type {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem;
+}
+.pub-title {
+  font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 0.98rem;
+  font-style: italic; margin-bottom: 0.2rem; line-height: 1.4;
+}
+.pub-authors { color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.15rem; }
+.pub-venue { color: var(--text-muted); font-size: 0.82rem; }
+.pub-award {
+  display: inline-block; margin-top: 0.35rem; padding: 0.15rem 0.5rem;
+  background: var(--accent-light); color: var(--accent); border-radius: 4px;
+  font-size: 0.72rem; font-weight: 600;
+}
 
-    <body>
+/* ── AWARDS ── */
+.awards-list { list-style: none; }
+.award-item { padding: 0.75rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1rem; align-items: baseline; }
+.award-item:last-child { border-bottom: none; }
+.award-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; color: var(--text-muted); flex-shrink: 0; min-width: 40px; }
+.award-text { font-size: 0.9rem; color: var(--text-light); }
 
-        <div class="c-preloader  js-preloader">
-            <div class="c-preloader__spinner  t-preloader__spinner"></div>
+/* ── EDUCATION ── */
+.edu-card { padding: 1.5rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; }
+.edu-years { font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+.edu-degree { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1rem; margin-bottom: 0.15rem; }
+.edu-school { color: var(--accent); font-size: 0.88rem; font-weight: 500; margin-bottom: 0.15rem; }
+.edu-loc { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 0.5rem; }
+.edu-note { color: var(--text-light); font-size: 0.85rem; line-height: 1.6; }
+
+/* ── TEACHING ── */
+.teaching-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.teaching-item:last-child { border-bottom: none; }
+.teaching-role { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+.teaching-title { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.1rem; }
+.teaching-detail { color: var(--text-light); font-size: 0.85rem; }
+
+/* ── CONTACT ── */
+.contact-list { list-style: none; margin-top: 0.5rem; }
+.contact-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.cl-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.cl-value { font-weight: 500; font-size: 0.92rem; }
+.cl-value a { color: var(--text); } .cl-value a:hover { color: var(--accent); }
+.social-links { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+.social-link {
+  padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 6px;
+  font-size: 0.82rem; font-weight: 500; color: var(--text-light); transition: all 0.2s;
+}
+.social-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── FOOTER ── */
+footer { padding: 2.5rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.82rem; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0;
+    background: var(--nav-bg); backdrop-filter: blur(12px); padding: 1rem 2rem; gap: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .container { padding: 0 1.5rem; }
+  .hero { padding: 8rem 0 3rem; }
+  .hero h1 { font-size: 2.2rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .cards-grid { grid-template-columns: 1fr; }
+  section { padding: 4rem 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Akhil S. G.</span>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero container">
+  <div class="hero-avatar">
+    <img src="https://sgakhil.github.io/assets/images/header/avatar.jpg" alt="Akhil SG" onerror="this.parentElement.style.background='var(--accent-light)'">
+  </div>
+  <h1>Akhil S. G.</h1>
+  <p class="hero-fullname">Akhil Sarangadharan GeethaKumari (he/him/his)</p>
+  <p class="hero-role">Researcher · Social Entrepreneur</p>
+  <p class="hero-bio">Exploring how humans and AI build trust, share knowledge, and work together — through ethnography, design, and a commitment to social justice.</p>
+  <div class="hero-actions">
+    <a href="https://github.com/sgakhil/sgakhil.github.io/blob/main/assets/Akhil_SG_CV2pager.pdf" class="btn btn-fill" target="_blank">Download CV</a>
+  </div>
+  <div class="hero-links">
+    <a href="https://www.linkedin.com/in/aklsg/" target="_blank">LinkedIn</a>
+    <a href="https://medium.com/@aklsg" target="_blank">Medium</a>
+    <a href="https://scholar.google.com/citations?hl=en&user=H8hewOwAAAAJ" target="_blank">Google Scholar</a>
+  </div>
+</header>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label reveal">About</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a doctoral candidate in Management (Design & Innovation) at the Weatherhead School of Management, Case Western Reserve University, expecting to graduate in May 2027. My dissertation, <em>Knowing, Trusting & Working in Metahuman Systems: A Longitudinal Ethnography of Everyday Knowledge Work</em>, examines how professionals and AI systems develop epistemic trust and distribute cognition in practice. I defended the proposal in May 2025.</p>
+        <p>My research sits at the intersection of human–AI collaboration, sociotechnical systems, and critical algorithmic governance. I study how knowledge workers navigate trust, doubt, and delegation when AI enters their workflows — drawing on cognitive ethnography and distributed cognition frameworks.</p>
+        <p>Beyond academia, I'm a nonprofit co-founder with over a decade of experience building initiatives in diversity, inclusion, sustainability, and experiential education across India and the United States.</p>
+      </div>
+      <div class="about-details reveal">
+        <div class="detail-item">
+          <div class="detail-label">Location</div>
+          <div class="detail-value">Cleveland, Ohio</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Current Role</div>
+          <div class="detail-value">PhD Candidate, CWRU</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Email</div>
+          <div class="detail-value">sg@case.edu</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 2.5rem;">
+      <p class="section-label">Research Interests</p>
+      <div class="interests-list">
+        <span class="interest-tag">Human–AI Collaboration</span>
+        <span class="interest-tag">Epistemic Trust</span>
+        <span class="interest-tag">Sociotechnical Systems</span>
+        <span class="interest-tag">Distributed Cognition</span>
+        <span class="interest-tag">Critical Algorithmic Governance</span>
+        <span class="interest-tag">Data & Labor Organizing</span>
+        <span class="interest-tag">Justice in AI Design</span>
+        <span class="interest-tag">Cognitive Ethnography</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label reveal">Publications</p>
+    <h2 class="section-title reveal">Research & writing</h2>
+    <p class="section-subtitle reveal">Journals, conference proceedings, books, presentations, and public scholarship.</p>
+
+    <div class="filter-pills reveal" id="pubFilters">
+      <button class="filter-btn active" data-pub="selected">Selected</button>
+      <button class="filter-btn" data-pub="all">All</button>
+    </div>
+
+    <ul class="pub-list">
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Journal Article</div>
+        <div class="pub-title">Understanding the Needs and Challenges of Cancer Registry Stakeholders</div>
+        <div class="pub-authors">Rose, J., <strong>Akhil S. G.</strong> (Co-first author), Koroukian, S. M., Kim, U., & Lyytinen, K.</div>
+        <div class="pub-venue">JCO Clinical Cancer Informatics 10(2), 2026</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Journal Article</div>
+        <div class="pub-title">The Population Cancer Assessment and Surveillance Engine (PopCASE): An Emerging Population Cancer Data Platform</div>
+        <div class="pub-authors">Rose, J., Hussain, F., Sahoo, S. S., Lyytinen, K., Song, S., Menegay, H. J., Lanese, R., <strong>Akhil S. G.</strong>, Liu, L., Tsui, J., Beno, M., Burus, T., & Koroukian, S. M.</div>
+        <div class="pub-venue">Journal of Registry Management 52(4), 151–154</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Conference Proceeding</div>
+        <div class="pub-title">When Knowing Is Unknowable: Trust and Distributed Cognition in Human–AI Systems</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">Academy of Management Proceedings, 2026</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Conference Proceeding</div>
+        <div class="pub-title">Invisible Labor of Argumentation: Ethnography of Radiologists Using AI</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">AMCIS 2026 Proceedings</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Conference Proceeding</div>
+        <div class="pub-title">Don't Design Away Doubt: Why Epistemic Trust Needs Doubt in AI Workflows</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">MWAIS 2026 Proceedings</div>
+        <span class="pub-award">Best Student Paper Award</span>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Conference Proceeding</div>
+        <div class="pub-title">Distributed Cognition and Human-AI Delegation in Knowledge Work</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">ICIS 2025 Proceedings</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Conference Proceeding</div>
+        <div class="pub-title">Emerging Epistemic Trust in Human-AI Delegation: Decision-Making in Knowledge Work</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">DSI 2025 Proceedings, Orlando</div>
+        <span class="pub-award">Best Conceptual Research Paper Award</span>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Edited Book</div>
+        <div class="pub-title">Technology, Management, and Social Justice: Critical Perspectives on Innovation, Equity, and Power</div>
+        <div class="pub-authors">Poonamallee, L., Joy, S., Scillitoe, J.L., Howard, A. & <strong>S. G., Akhil</strong> (Eds.)</div>
+        <div class="pub-venue">Palgrave Macmillan, 2026</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Book Chapter</div>
+        <div class="pub-title">Responsible AI Scaling in Healthcare: A Socio-Tech Venture Framework</div>
+        <div class="pub-authors">Poonamallee, L. & <strong>S. G., Akhil</strong></div>
+        <div class="pub-venue">In <em>The Research Handbook on Socio-Tech Entrepreneurship</em>, Edward Elgar Publishing, 2026</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Book Chapter</div>
+        <div class="pub-title">Revolutionizing and Balancing Algorithmic Management: Power and Justice</div>
+        <div class="pub-authors">Poonamallee, L. & <strong>S. G., Akhil</strong></div>
+        <div class="pub-venue">In <em>Technology, Management, and Social Justice</em>, Palgrave Macmillan, 2026</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="selected">
+        <div class="pub-type">Book Chapter</div>
+        <div class="pub-title">Technological Revolution and Emergence of New Management Models in the COVID Era</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Poonamallee, L.</div>
+        <div class="pub-venue">In <em>Managing for Social Justice</em>, Springer, 2023</div>
+      </li>
+
+      <!-- Additional items shown when "All" is toggled -->
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Conference Proceeding</div>
+        <div class="pub-title">Continued Augmentation in Metahuman Systems: Phase of Trust Building</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">Academy of Management Proceedings 2025, no. 1: 22130</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Presentation</div>
+        <div class="pub-title">Distributed Cognition and Human-AI Delegation in Knowledge Work</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">Pre-ICIS 2025 Workshop — 16th SIG Changing Nature of Work, AIS</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Presentation</div>
+        <div class="pub-title">Dissertation Proposal Presentation</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong></div>
+        <div class="pub-venue">Collective Impact Doctoral Workshop 2025, Mack Institute, The Wharton School, UPenn</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Presentation</div>
+        <div class="pub-title">Navigating the Cancer Data Ecosystem: A Social Modeling Perspective</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong>, Lyytinen, K., & Rose, J.</div>
+        <div class="pub-venue">NAACCR 2025 Annual Conference, Hartford, CT</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Presentation</div>
+        <div class="pub-title">Continued Augmentation in Metahuman Systems: Phase of Trust Building</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">Biz AI Conference, University of Texas at Dallas, 2025</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Workshop</div>
+        <div class="pub-title">Power, Ethics, Creativity, and Self-Care: Complexities in Field Research in Postcolonial Societies</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong>, Bhowmik, T., Mahalingam, R., Barhoi, P., Pathak, M. T., & Chrispal, S.</div>
+        <div class="pub-venue">CTO Division, Academy of Management, Copenhagen, 2025</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Workshop</div>
+        <div class="pub-title">Artificial Intelligence and Inequality: An Intersectional Approach</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong>, Bharati, P. & Mahalingam, R.</div>
+        <div class="pub-venue">SIM & CTO Divisions, Academy of Management, Chicago, 2024</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Workshop</div>
+        <div class="pub-title">Decolonizing Field Research in a Neoliberal Economy</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong>, Bhowmik, T., Mahalingam, R., Doshi, V., Agarrwal, P. & Barhoi, P.</div>
+        <div class="pub-venue">CMS Division, Academy of Management, Chicago, 2024</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Workshop</div>
+        <div class="pub-title">Continued Augmentation in Metahuman Systems: Phase of Trust Building</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong> & Lyytinen, K.</div>
+        <div class="pub-venue">SIGDITE Paper Development Workshop, AIS, 2024</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Workshop</div>
+        <div class="pub-title">Managing for Social Justice: Harnessing Management Theory and Practice for Collective Good</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong>, Howard, A. & Joy, S.</div>
+        <div class="pub-venue">SIM Division, Academy of Management, Boston, 2023</div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Public Scholarship</div>
+        <div class="pub-title">Kerala Startup Ecosystem Report</div>
+        <div class="pub-authors"><strong>S. G., Akhil</strong></div>
+        <div class="pub-venue">Published by Government of Kerala, 2017 · <a href="https://startupmission.kerala.gov.in/ecosystem" target="_blank">View report</a></div>
+      </li>
+
+      <li class="pub-item reveal" data-pubcat="extra" style="display:none;">
+        <div class="pub-type">Public Scholarship</div>
+        <div class="pub-title">The New School Is in Crisis</div>
+        <div class="pub-authors">Bardia, A., Yadav, S., Rajapaksha, K., & <strong>S. G., Akhil</strong></div>
+        <div class="pub-venue">Jacobin Magazine, December 2, 2020 · <a href="https://jacobin.com/2020/12/the-new-school-nssr-austerity-covid-neoliberalism" target="_blank">Read article</a></div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label reveal">Experience</p>
+    <h2 class="section-title reveal">Where I've worked</h2>
+
+    <button class="section-expand-btn reveal" id="expToggle">
+      Show experience <span class="arrow">▼</span>
+    </button>
+
+    <div class="section-collapse" id="expContent">
+
+      <div style="margin-top: 1.5rem;">
+        <div class="filter-pills" id="expFilters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="academic">Academic</button>
+          <button class="filter-btn" data-filter="professional">Professional</button>
+          <button class="filter-btn" data-filter="entrepreneurial">Entrepreneurial</button>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item" data-cat="academic">
+          <div class="tl-date">2025 – 2026</div>
+          <div class="tl-role">Managing Editor</div>
+          <div class="tl-org">Design Issues Journal, MIT Press</div>
+          <ul class="tl-bullets"><li>Managing editorial operations for this leading design research journal.</li></ul>
+          <button class="tl-toggle">show more</button>
         </div>
 
-        <div class="c-main-container  js-main-container">
-
-            <!-- ################################ -->
-            <!-- ############ HEADER ############ -->
-            <!-- ################################ -->
-            
-            <section class="o-section o-section--header  t-section  t-section--header">
-                <div class="c-header">
-
-                    <div class="o-section__header-bg  t-section__header"></div>
-                    <div class="o-section__content-bg  t-section__content"></div>
-
-                    <div class="o-container">
-                        <div class="o-section__container">
-
-                            <header class="o-section__header  c-header__header  t-section__header">
-                                <div class="c-header__inner-header">
-
-                                    <div class="c-header__avatar">
-                                        <div class="a-header  c-avatar">
-                                            <img class="c-avatar__img" src="assets/images/header/avatar.jpg" alt="">
-                                        </div><!-- /c-avatar -->
-                                    </div><!-- /c-header-avatar -->
-
-                                </div><!-- /c-header__inner-header -->
-                            </header><!-- /o-section__header -->
-
-                            <div class="o-section__content  c-header__content  t-section__content">
-                                <div class="c-header__inner-content">
-
-                                    <div class="c-header__top">
-
-                                        <div class="c-header__brand">
-
-                                            <div class="c-brand">
-                                                <h1 class="c-brand__title  t-title">
-                                                    <span class="c-brand__sizer">
-                                                        <span class="a-header  c-brand__first-word  t-title__first-word">
-                                                            Akhil
-                                                        </span>
-                                                        <span class="a-header  c-brand__second-word  t-title__second-word">
-                                                            SG
-                                                        </span>
-                                                    </span>
-                                                </h1>
-                                                <h2 class="a-header  c-brand__sub-title  t-sub-title">
-                                                    <span class="c-brand__sizer">
-                                                        Social Entrepreneur &amp; Researcher 
-                                                    </span>
-                                                </h2>
-                                                <h2 class="a-header  c-brand__sub-title  t-sub-title">
-                                                    <a href="https://github.com/sgakhil/sgakhil.github.io/blob/main/assets/Akhil_SG_CV2pager.pdf" target="_blank">
-                                                    <i class="fa  fa-lg  fa-download"></i> 
-                                                    <span class="c-brand__sizer">
-                                                        Download Resume
-                                                    </span>
-                                                    </a>
-                                                </h2>
-
-                                            </div><!-- /c-brand -->
-
-                                        </div><!-- /c-header__brand -->
-
-                                        <ul class="c-header__social-buttons  c-social-buttons">
-                                            <li class="a-header">
-                                                <a href="https://www.linkedin.com/in/aklsg/" target="_blank" class="c-social-button  t-social-button">
-                                                    <i class="fa  fa-lg  fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li class="a-header">
-                                                <a href="https://medium.com/@aklsg" target="_blank" class="c-social-button  t-social-button">
-                                                    <i class="fa  fa-lg  fa-medium"></i>
-                                                </a>
-                                            </li>
-                                            <li class="a-header">
-                                                <a href="https://scholar.google.com/citations?hl=en&user=H8hewOwAAAAJ" class="c-social-button  t-social-button">
-                                                    <i class="fa fa-graduation-cap"></i>
-                                                </a>
-                                            </li>
-                                        </ul><!-- /c-header__social-buttons -->
-
-                                    </div><!-- /c-header__top -->
-
-                                    <div class="c-header__contact">
-
-                                        <hr class="a-header  c-header__contact-divider" />
-
-                                        <div class="o-grid">
-
-                                            <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                                <div class="a-header  o-content">
-                                                    <div class="o-content__body">
-                                                        <h4>Location</h4>
-                                                        <address>
-                                                            Cleveland, OH
-                                                        </address>
-                                                    </div>
-                                                </div><!-- /o-content -->
-                                            </div><!-- /o-grid__col -->
-
-                                            <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                                <div class="a-header  o-content">
-                                                    <div class="o-content__body">
-                                                        <h4>Phone</h4>
-                                                        <p>
-                                                            +1 3478634962
-                                                        </p>
-                                                    </div>
-                                                </div><!-- /o-content -->
-                                            </div><!-- /o-grid__col -->
-
-                                            <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                                <div class="a-header  o-content">
-                                                    <div class="o-content__body">
-                                                        <a href="https://sgakhil.github.io/" target="_blank" class="t-link-container">
-                                                            <h4>Web</h4>
-                                                            <p>
-                                                                <span class="t-link-container__item--blended">
-                                                                   sgakhil.github.io
-                                                                </span>
-                                                            </p>
-                                                        </a><!-- /o-link-container -->
-                                                    </div>
-                                                </div><!-- /o-content -->
-                                            </div><!-- /o-grid__col -->
-
-                                            <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                                <div class="a-header  o-content">
-                                                    <div class="o-content__body">
-                                                        <a href="mailto:akhilsg@protonmail.com" target="_blank" class="t-link-container">
-                                                            <h4>Email</h4>
-                                                            <p>
-                                                                <span class="t-link-container__item--blended">
-                                                                    akhilsg@protonmail.com
-                                                                </span>
-                                                            </p>
-                                                        </a><!-- /o-link-container -->
-                                                    </div>
-                                                </div><!-- /o-content -->
-                                            </div><!-- /o-grid__col -->
-
-                                        </div><!-- /o-grid -->
-                                    </div><!-- /c-header__contact -->
-
-                                </div><!-- /c-header__inner-content -->
-                            </div><!-- /o-section__content -->
-
-                        </div><!-- /o-section__container -->
-
-                    </div><!-- /o-container -->
-
-                </div><!-- /c-header -->
-            </section><!-- /o-section -->
-
-            <!-- ################################ -->
-            <!-- ############ INTRO ############# -->
-            <!-- ################################ -->
-            
-            <section class="o-section  t-section  ">
-
-                <div class="o-section__header-bg  t-section__header"></div>
-                <div class="o-section__content-bg  t-section__content"></div>
-
-                <div class="o-container">
-                    <div class="o-section__container">
-
-                        <header class="o-section__header  t-section__header">
-                            <div class="o-content">
-                                <h2 class="o-section__heading">
-                                    Intro
-                                </h2>
-                                <div class="o-content__body  o-section__description">
-                                    About Me
-                                </div>
-                            </div>
-                        </header><!-- /o-section__header -->
-
-                        <div class="o-section__content  t-section__content  ">
-                            
-                            <div class="o-content">
-                                <div class="c-intro">
-                                    <div class="o-content__body">
-                                        <p>
-                                            A social entrepreneur and researcher exploring innovative ways to use data and technologies to enable social justice. An educator curious of ways to impart knowledge and stimulate ideas in individuals using discovery and experiential learning. A social scientist learning the implication of technology in the society through inquiry, evidence and experience. And an engineer identifying and applying emerging tools to generate sufficient momentum to compact growing urban challenges. 
-                                        </p>
-                                        <ul>
-                                            <li>Doctoral Student in Design and Innovation Department at Weatherhead School of Management, Case Western Reserve University</li>
-                                            <li>Multi-sectoral experience in technology management with strong foundation in project management,financial modeling and analysis, and strategy building and obtaining buy-ins.</li>
-                                            <li>Experienced researcher using various qualitative and quantitative techniques in different sectors incl. socio tech innovations, urban inequalities, public education, and so on. </li>
-                                            <li>Nonprofit founder, co-founding an array of initiatives in diversity, inclusion, and sustainability.</li>
-                                            <li>Fluent in English and multiple Indian languages with basic understanding of Spanish.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- /o-section__content -->
-
-                    </div><!-- /o-section__container -->
-                </div><!-- /o-container -->
-
-            </section><!-- /o-section -->
-            
-            <!-- ################################ -->
-            <!-- ########### EDUCATION ########## -->
-            <!-- ################################ -->
-            
-            <section class="o-section  t-section  ">
-
-                <div class="o-section__header-bg  t-section__header"></div>
-                <div class="o-section__content-bg  t-section__content"></div>
-
-                <div class="o-container">
-                    <div class="o-section__container">
-
-                        <header class="o-section__header  t-section__header">
-                            <div class="o-content">
-                                <h2 class="o-section__heading">
-                                    Education
-                                </h2>
-                                <div class="o-content__body  o-section__description">
-                                    Had my reasons to.
-                                </div>
-                            </div>
-                        </header><!-- /o-section__header -->
-
-                        <div class="o-section__content  t-section__content  u-pt-0">
-                            
-                            <div class="o-content">
-                                <div class="a-education-timeline  c-timeline  t-border-color  o-section__full-top-space">
-                                    <div class="c-timeline__end  t-border-color"></div>
-
-                                   <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        2022 &ndash; Present
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                        Case Western Reserve University
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                        PhD in Management - Design and Innovation
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                        Cleveland, Ohio, United States
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                        <li>Currently working on Building Trust in workplaces using AI</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-                                    
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        2019 &ndash; 2021
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                        The New School
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                        Masters of Science Nonprofit Management
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                        Manhattan, New York City, United States
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                        <li>Minor in Global Urban Future from Julien J. Studley Graduate Programs in International Affairs</li>
-                                                        <li>Final thesis – ‘Urban food environments: A case study of a Harlem neighborhood’</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        2010 &ndash; 2014
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                        Sree Chitra Thirunal College of Engineering
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                        Bachelors in Technology Mechanical Automobile Engineering
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                        Pappanamcode, Thiruvanathapuram, India
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                        <li>Final thesis – ‘Design, Fabrication, and Analysis of RCCI engine to test for low emission’</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-                                </div><!-- /c-timeline -->
-                            </div><!-- /o-content -->
-
-                        </div><!-- /o-section__content -->
-
-                    </div><!-- /o-section__container -->
-                </div><!-- /o-container -->
-
-            </section><!-- /o-section -->
-
-
-            <!-- ################################ -->
-            <!-- ########## EXPERIENCE ########## -->
-            <!-- ################################ -->
-            
-            <section class="o-section  t-section  ">
-
-                <div class="o-section__header-bg  t-section__header"></div>
-                <div class="o-section__content-bg  t-section__content"></div>
-
-                <div class="o-container">
-                    <div class="o-section__container">
-
-                        <header class="o-section__header  t-section__header">
-                            <div class="o-content">
-                                <h2 class="o-section__heading">
-                                    Entrepreneurial Experience
-                                </h2>
-                                <div class="o-content__body  o-section__description">
-                                    Motivation: Passion 100 Money 0
-                                </div>
-                            </div>
-                        </header><!-- /o-section__header -->
-
-                        <div class="o-section__content  t-section__content  u-pb-0">
-                            
-                            <div class="a-experience-timeline  c-timeline  t-border-color">
-
-                                <div class="c-timeline__item">
-                                    <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                    <div class="o-content">
-                                        <div class="o-grid">
-                                            <div class="o-grid__col-md-5">
-                                                <div class="c-work__timeframe">
-                                                    JUL 2013 &ndash; Present
-                                                </div>
-                                                <h3 class="c-work__heading">
-                                                        Sahridhaya
-                                                </h3>
-                                                <h4 class="c-work__title">
-                                                        Founder &amp; Managing Trustee
-                                                </h4>
-                                                <div class="c-work__location">
-                                                        Thiruvanathapuram, India
-                                                </div>
-                                            </div>
-                                            <div class="o-grid__col-md-7">
-                                                <p>
-                                                    <li>Started the nonprofit to create skill building and community engagement opportunities for the youth in addressing social issues, now in its ninth year. </li> 
-                                                    <li>Curated and led youth sensitisation initiatives incl. discovery learning workshops for K-12 and undergraduates, public awareness events with opportunities for talent showcasing, blood donation campaigns, fundraising for child, elderly care centers and so on. </li> 
-                                                    <li>Conceptualized, designed, implemented and evaluated over multiple public events and initiatives in varying domains incl. child rights, gender and inequality, disability rights, climate activism and health equity under the nonprofit.</li> 
-                                                </p>
-                                            </div>
-                                        </div><!-- /o-grid -->
-                                    </div><!-- /o-content -->
-                                </div><!-- /c-timeline__item -->
-
-                                <div class="c-timeline__item">
-                                    <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                    <div class="o-content">
-                                        <div class="o-grid">
-                                            <div class="o-grid__col-md-5">
-                                                <div class="c-work__timeframe">
-                                                    JUN 2020 &ndash; JUN 2022
-                                                </div>
-                                                <h3 class="c-work__heading">
-                                                        SALAM
-                                                </h3>
-                                                <h4 class="c-work__title">
-                                                        CoFounder &amp; Member
-                                                </h4>
-                                                <div class="c-work__location">
-                                                        New York City, United States
-                                                </div>
-                                            </div>
-                                            <div class="o-grid__col-md-7">
-                                                <p>
-                                                    <li>Served as a policy consultant for a progressive candidate in New York city council elections ’21.</li>  
-                                                    <li>Researched and created policy recommendations in the field of education, small businesses, and worker rights for the candidate based on neighborhood data.</li> 
-                                                    <li>Organized and participated in reading circles and study groups on understanding the struggle of the immigrant working class in the US.</li> 
-                                                </p>
-                                            </div>
-                                        </div><!-- /o-grid -->
-                                    </div><!-- /o-content -->
-                                </div><!-- /c-timeline__item -->
-
-                                <div class="c-timeline__item">
-                                    <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                    <div class="o-content">
-                                        <div class="o-grid">
-                                            <div class="o-grid__col-md-5">
-                                                <div class="c-work__timeframe">
-                                                    FEB 2017 &ndash; JUN 2019
-                                                </div>
-                                                <h3 class="c-work__heading">
-                                                        Green Army
-                                                </h3>
-                                                <h4 class="c-work__title">
-                                                        Founding Member &amp; Senior Mentor
-                                                </h4>
-                                                <div class="c-work__location">
-                                                        Thiruvanathapuram, India
-                                                </div>
-                                            </div>
-                                            <div class="o-grid__col-md-7">
-                                                <p>
-                                                        <li>Co-created a platform where students are introduced to climate change and waste management strategies through activities and interactive sessions under the auspices of City Govt. of Trivandrum.</li>
-                                                        <li>Served on the core team that recruited and monitored project fellows, interns and volunteers.</li>
-                                                        <li>Created residential camp structure and reports incl. the framework and evaluation matrices, for internal documentation and public relations.</li>
-                                                        <li>Conducted and optimized residential workshops and public sessions for students on climate change and volunteer training.</li>
-                                                </p>
-                                            </div>
-                                        </div><!-- /o-grid -->
-                                    </div><!-- /o-content -->
-                                </div><!-- /c-timeline__item -->
-
-                                <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        JUN 2018 &ndash; JUN 2019
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            CUB &ndash;Creating Unique Brains
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Program Director
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            Thiruvanathapuram, India
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Co-created and wrote the successful grant proposal for the initiative funded by the State Govt. to pilot technology introduction, experiential learning techniques and advanced problem-solving strategies to students in public education under the auspices of Sahridhaya.</li>
-                                                            <li>Designed the syllabus and co designed the curriculum for courses under CUB. Facilitated student orientation classes and taught course on problem solving and design thinking.</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-    
-                            </div><!-- /c-timeline -->
-
-                        </div><!-- /o-section__content -->
-
-                    </div><!-- /o-section__container -->
-                </div><!-- /o-container -->
-
-            </section><!-- /o-section -->
-
-            <!-- ################################ -->
-            <!-- ########### Research ########## -->
-            <!-- ################################ -->
-            
-            <section class="o-section  t-section  ">
-
-                    <div class="o-section__header-bg  t-section__header"></div>
-                    <div class="o-section__content-bg  t-section__content"></div>
-    
-                    <div class="o-container">
-                        <div class="o-section__container">
-    
-                            <header class="o-section__header  t-section__header">
-                                <div class="o-content">
-                                    <h2 class="o-section__heading">
-                                        Research and Work Experience
-                                    </h2>
-                                    <div class="o-content__body  o-section__description">
-                                        Motivation Passion 50 Money 50
-                                    </div>
-                                </div>
-                            </header><!-- /o-section__header -->
-    
-                            <div class="o-section__content  t-section__content  u-pb-0" style="padding-top: 0px;">
-                                
-                                    <div class="a-education-timeline  c-timeline  t-border-color  o-section__full-top-space">
-    
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        JUN &ndash; DEC 2021
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            New York City Economic Development Corporation
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Grants Manager &ndash; Internship
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            New York City, United States
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Identified, written grant narratives, and reviewed applications for different grant proposals submitted to various state and federal agencies incl. CDBG-DR of HUD, CFA of NYS.</li>
-                                                            <li>Studied existing cost reasonableness process and created documents to avoid mismanagement and reduce redundancy, the solution suggested was accepted by the teams</li>
-                                                            <li>Reviewed to provide feedbacks for optimizing Grants Management System scheduled for a company-wide release, the feedbacks eliminated data errors and better data management.</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        AUG 2020 &ndash; MAY 2021
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            The New School
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Program Manager
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            New York City, United States
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Coordinated and organized the online conversation series – Management and Social Justice 2020–21</li>
-                                                            <li>Benchmarked practices from events promotion to the facilitation of panels and workshops</li>
-                                                            <li>Co-curated panels with panelists from industries incl. media, higher education, healthcare, philanthropy, public education, and technology to align discussions to identified themes.</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        JAN &ndash; MAY 2021
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            SENS &ndash;UAW, Local 7902
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Union Representative
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            New York City, United States
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Served as one of the five representatives of student workers union to advocate for student workers’ rights and welfare in the New School campus.</li>
-                                                            <li>Attended to grievances and promoted worker rights activities on campus through campaigns and open forums.</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        JAN 2020 &ndash; MAY 2021
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            The New School
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Research Assistant
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            New York City, United States
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Conducted qualitative research for the paper – ‘Building a research database on Indian Social Ventures and Social Innovation’.</li>
-                                                            <li>Analyzed interview data to support findings for the paper – ‘Understanding Legal Structure Choices of Social Enterprises from a Resource Dependence Perspective’</li>
-                                                            <li>Indexed the book – Expansive Leadership: Cultivating Mindfulness to Lead Self and Others</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        AUG 2017 &ndash; AUG 2019
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            International Center for Free and Open Source Software
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Researcher &ndash; Assistive Technology
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            Thiruvanathapuram, India
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Researched and led a team of interdisciplinary practitioners using a human-centric design process to develop Kerala’s first customizable ergonomic mouse.</li>
-                                                            <li>Directed FLIP Mouse redesign at 93% reduction of original price without compromising functionality, resulting in the adoption of product design within the Indian market.</li>
-                                                            <li>Wrote and submitted a successful grant application for local manufacturing and development of Assistive Kit, to Govt. of India, Ministry of Social Justice & Empowerment of Persons with Disabilities</li>
-                                                            <li>Conducted and optimized residential workshops and public sessions for students on climate change and volunteer training.</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-                                    <div class="c-timeline__item">
-                                        <div class="c-timeline__point  t-timeline__point  t-primary-bg"></div>
-                                        <div class="o-content">
-                                            <div class="o-grid">
-                                                <div class="o-grid__col-md-5">
-                                                    <div class="c-work__timeframe">
-                                                        FEB 2016 &ndash; APR 2017
-                                                    </div>
-                                                    <h3 class="c-work__heading">
-                                                            Kerala Startup Mission
-                                                    </h3>
-                                                    <h4 class="c-work__title">
-                                                            Technology Innovation Fellow
-                                                    </h4>
-                                                    <div class="c-work__location">
-                                                            Thiruvanathapuram, India
-                                                    </div>
-                                                </div>
-                                                <div class="o-grid__col-md-7">
-                                                    <p>
-                                                            <li>Designed and piloted IEDC Summit ’16, a student entrepreneurs meetup, now in its seventh year.</li>
-                                                            <li>Co-designed and piloted Seeding Kerala ’17, an investor meetup, now in its fifth year.</li>
-                                                            <li>Facilitated workshops on design thinking and leadership training</li>
-                                                            <li>Served as spokesperson for social entrepreneurship, integrating technology for social impact and promoting Govt. schemes for entrepreneurship support.</li>
-                                                            <li>Represented the organization in various national and international networking forums to enhance stakeholder relationships in the startup ecosystem.</li>
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-grid -->
-                                        </div><!-- /o-content -->
-                                    </div><!-- /c-timeline__item -->
-
-                                </div><!-- /c-timeline -->
-    
-                            </div><!-- /o-section__content -->
-    
-                        </div><!-- /o-section__container -->
-                    </div><!-- /o-container -->
-    
-                </section><!-- /o-section -->
-        
-
-        
-            <!-- ################################ -->
-            <!-- ########### PROFILES ########### -->
-            <!-- ################################ -->
-            
-            <section class="o-section  t-section  ">
-
-                <div class="o-section__header-bg  t-section__header"></div>
-                <div class="o-section__content-bg  t-section__content"></div>
-
-                <div class="o-container">
-                    <div class="o-section__container">
-
-                        <header class="o-section__header  t-section__header">
-                            <div class="o-content">
-                                <h2 class="o-section__heading">
-                                    Profiles
-                                </h2>
-                                <div class="o-content__body  o-section__description">
-                                    Know a part of ME.
-                                </div>
-                            </div>
-                        </header><!-- /o-section__header -->
-
-                        <div class="o-section__content  t-section__content  ">
-                            
-                            <div class="o-grid">
-
-                                <div class="o-grid__col-xl-4  o-grid__col-sm-6">
-                                    <div class="o-content">
-                                        <a href="https://www.linkedin.com/in/aklsg/" target="_blank" class="t-link-container">
-                                            <div class="o-media  o-media--block">
-                                                <div class="o-media__figure">
-                                                    <div class="c-profile__icon">
-                                                        <i class="fa  fa-lg  fa-linkedin"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="o-media__body  o-content__body">
-                                                    <h3 class="t-link-container__item">
-                                                        LinkedIn
-                                                    </h3>
-                                                    <p>
-                                                        Work and 'Professional Stuffs'
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-media -->
-                                        </a><!-- /t-link-container -->
-                                    </div><!-- /o-content -->
-                                </div><!-- /o-grid__col -->
-
-                                <div class="o-grid__col-xl-4  o-grid__col-sm-6">
-                                    <div class="o-content">
-                                        <a href="https://medium.com/@aklsg" target="_blank" class="t-link-container">
-                                            <div class="o-media  o-media--block">
-                                                <div class="o-media__figure">
-                                                    <div class="c-profile__icon">
-                                                        <i class="fa  fa-lg  fa-medium"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="o-media__body  o-content__body">
-                                                    <h3 class="t-link-container__item">
-                                                        Medium
-                                                    </h3>
-                                                    <p>
-                                                        Writing down Thoughts and Ideas I care about
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-media -->
-                                        </a><!-- /t-link-container -->
-                                    </div><!-- /o-content -->
-                                </div><!-- /o-grid__col -->
-
-                                <div class="o-grid__col-xl-4  o-grid__col-sm-6">
-                                    <div class="o-content">
-                                        <a href="https://scholar.google.com/citations?hl=en&user=H8hewOwAAAAJ" target="_blank" class="t-link-container">
-                                            <div class="o-media  o-media--block">
-                                                <div class="o-media__figure">
-                                                    <div class="c-profile__icon">
-                                                        <i class="fa fa-graduation-cap"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="o-media__body  o-content__body">
-                                                    <h3 class="t-link-container__item">
-                                                        Google Scholar
-                                                    </h3>
-                                                    <p>
-                                                        Ideas, Perspective & Somethings Scholarly
-                                                    </p>
-                                                </div>
-                                            </div><!-- /o-media -->
-                                        </a><!-- /t-link-container -->
-                                    </div><!-- /o-content -->
-                                </div><!-- /o-grid__col -->
-
-                            </div><!-- /o-grid -->
-
-                        </div><!-- /o-section__content -->
-
-                    </div><!-- /o-section__container -->
-                </div><!-- /o-container -->
-
-            </section><!-- /o-section -->
-
-            <!-- ################################ -->
-            <!-- ############ FOOTER ############ -->
-            <!-- ################################ -->
-            
-            <section class="o-section  t-section  o-section--footer">
-
-                <div class="o-section__header-bg  t-section__header"></div>
-                <div class="o-section__content-bg  t-section__content"></div>
-
-                <div class="o-container">
-                    <div class="o-section__container">
-
-                        <header class="o-section__header  t-section__header">
-                            <div class="o-content">
-                                <h2 class="o-section__heading">
-                                    Contact
-                                </h2>
-                                <div class="o-content__body  o-section__description">
-                                    Lets get a coffee or maybe talk.
-                                </div>
-                            </div>
-                        </header><!-- /o-section__header -->
-
-                        <div class="o-section__content  t-section__content  ">
-                            
-                                <div class="c-footer__contact">
-                                    <div class="o-grid">
-
-                                    <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                        <div class="o-content">
-                                            <div class="o-content__body">
-                                                <h4>Location</h4>
-                                                <address>
-                                                    Cleveland, Ohio, United States
-                                                </address>
-                                            </div>
-                                        </div><!-- /o-content -->
-                                    </div><!-- /o-grid__col -->
-
-                                    <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                        <div class="o-content">
-                                            <div class="o-content__body">
-                                                <h4>Phone</h4>
-                                                <p>
-                                                    +1-3478634962
-                                                </p>
-                                            </div>
-                                        </div><!-- /o-content -->
-                                    </div><!-- /o-grid__col -->
-
-                                    <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                        <div class="o-content">
-                                            <div class="o-content__body">
-                                                <a href="https://sgakhil.github.io/" target="_blank" class="t-link-container">
-                                                    <h4>Web</h4>
-                                                    <p>
-                                                        <span class="t-link-container__item--blended">
-                                                            sgakhil.github.io
-                                                        </span>
-                                                    </p>
-                                                </a><!-- /o-link-container -->
-                                            </div>
-                                        </div><!-- /o-content -->
-                                    </div><!-- /o-grid__col -->
-
-                                    <div class="o-grid__col-md-3  o-grid__col-sm-6">
-                                        <div class="o-content">
-                                            <div class="o-content__body">
-                                                <a href="mailto:akhilsg@protonmail.com" target="_blank" class="t-link-container">
-                                                        <h4>Email</h4>
-                                                        <p>
-                                                            <span class="t-link-container__item--blended">
-                                                                akhilsg@protonmail.com
-                                                            </span>
-                                                        </p>
-                                                    </a><!-- /o-link-container -->
-                                            </div>
-                                        </div><!-- /o-content -->
-                                    </div><!-- /o-grid__col -->
-
-                                </div><!-- /o-grid -->
-                                </div><!-- /c-footer__contact -->
-
-                                <hr class="c-footer__contact-divider" />
-
-                                <div class="o-content">
-                                    <div class="c-footer__bottom">
-                                        <div class="c-footer__brand">
-
-                                            <div class="c-brand">
-                                                <div class="o-content__body">
-                                                    <h1 class="c-brand__title  t-title">
-                                                        <span class="c-brand__sizer  c-brand__sizer--sm">
-                                                            <span class="a-footer  c-brand__first-word  t-title__first-word">
-                                                                Akhil
-                                                            </span>
-                                                            <span class="a-footer  c-brand__second-word  t-title__second-word">
-                                                                SG
-                                                            </span>
-                                                        </span>
-                                                    </h1>                                                
-                                                    <h2 class="a-header  c-brand__sub-title  t-sub-title">
-                                                        <a href="https://github.com/sgakhil/sgakhil.github.io/blob/main/assets/Akhil_SG_CV2pager.pdf" target="_blank">
-                                                        <i class="fa  fa-lg  fa-download"></i> 
-                                                        <span class="c-brand__sizer">
-                                                            Download Resume
-                                                        </span>
-                                                        </a>
-                                                    </h2>
-    
-
-
-                                                </div><!-- /o-content__body -->
-                                            </div><!-- /c-brand -->
-
-                                        </div><!-- /c-footer__brand -->
-
-                                        <ul class="c-footer__social-buttons  c-social-buttons  o-content__body">
-                                            <li class="a-footer">
-                                                <a href="https://www.linkedin.com/in/aklsg/" target="_blank" class="c-social-button  t-social-button">
-                                                    <i class="fa  fa-lg  fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li class="a-footer">
-                                                <a href="https://medium.com/@aklsg" target="_blank" class="c-social-button  t-social-button">
-                                                    <i class="fa  fa-lg  fa-medium"></i>
-                                                </a>
-                                            </li>
-                                            <li class="a-footer">
-                                                <a href="https://scholar.google.com/citations?hl=en&user=H8hewOwAAAAJ" target="_blank" class="c-social-button  t-social-button">
-                                                    <i class="fa fa-graduation-cap"></i>
-                                                </a>
-                                            </li>
-                                        </ul><!-- /c-footer__social-buttons -->
-
-                                    </div><!-- /c-footer__bottom -->
-                                </div><!-- /o-content -->
-
-                        </div><!-- /o-section__content -->
-
-                    </div><!-- /o-section__container -->
-                </div><!-- /o-container -->
-
-            </section><!-- /o-section -->
-
-        </div><!-- /c-main-container -->
-
-    </body>
-
+        <div class="tl-item" data-cat="academic">
+          <div class="tl-date">Spring 2025</div>
+          <div class="tl-role">Adjunct Professor / Instructor</div>
+          <div class="tl-org">Case Western Reserve University</div>
+          <div class="tl-loc">Cleveland, Ohio</div>
+          <ul class="tl-bullets">
+            <li>MIDS 310 — Introduction to Information: A Systems and Design Approach (Eval: 4.30/5, 55 students)</li>
+            <li>DESN 210 — Introduction to Programming for Business Applications (Eval: 4.41/5, 40 students)</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="academic">
+          <div class="tl-date">2023 – 2026</div>
+          <div class="tl-role">Research Assistant — NIH/NCI Grant U01CA284198</div>
+          <div class="tl-org">Case Comprehensive Cancer Center</div>
+          <div class="tl-loc">Cleveland, Ohio</div>
+          <ul class="tl-bullets">
+            <li>Developing PopCASE, a portable informatics tool standardizing patient-level cancer registry data with community-level social and health data. PI: Dr. Johnie Rose.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="academic">
+          <div class="tl-date">2024 – 2025</div>
+          <div class="tl-role">Research Assistant</div>
+          <div class="tl-org">Office of Strategic Research, Weatherhead School of Management</div>
+          <div class="tl-loc">Cleveland, Ohio</div>
+          <ul class="tl-bullets"><li>Supported strategic research initiatives at Weatherhead School of Management.</li></ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="academic">
+          <div class="tl-date">2020 – 2022</div>
+          <div class="tl-role">Research Assistant</div>
+          <div class="tl-org">Milano School of Management, The New School</div>
+          <div class="tl-loc">New York City</div>
+          <ul class="tl-bullets">
+            <li>Built a research database on Indian Social Ventures and Social Innovation.</li>
+            <li>Analyzed interview data on legal structure choices of social enterprises from a resource dependence perspective.</li>
+            <li>Research Assistant to Dr. Latha Poonamallee.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="professional">
+          <div class="tl-date">2021</div>
+          <div class="tl-role">Grants Manager (Intern)</div>
+          <div class="tl-org">NYC Economic Development Corporation</div>
+          <div class="tl-loc">New York City</div>
+          <ul class="tl-bullets">
+            <li>Wrote grant narratives for state and federal proposals including HUD CDBG-DR and NYS CFA.</li>
+            <li>Analyzed cost reasonableness processes and reviewed the Grants Management System for company-wide release.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="professional">
+          <div class="tl-date">2020 – 2021</div>
+          <div class="tl-role">Special Projects Manager</div>
+          <div class="tl-org">The New School</div>
+          <div class="tl-loc">New York City</div>
+          <ul class="tl-bullets">
+            <li>Led the 'Management and Social Justice' 2020–21 conversation series, curating panels across media, education, healthcare, and technology.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="professional">
+          <div class="tl-date">2021</div>
+          <div class="tl-role">Union Representative</div>
+          <div class="tl-org">SENS – UAW, Local 7902</div>
+          <div class="tl-loc">New York City</div>
+          <ul class="tl-bullets">
+            <li>One of five representatives advocating for student workers' rights and welfare at The New School.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="professional">
+          <div class="tl-date">2017 – 2019</div>
+          <div class="tl-role">Researcher, Assistive Technology & Interim Manager, FOSS Incubator</div>
+          <div class="tl-org">International Center for Free and Open Source Software</div>
+          <div class="tl-loc">Thiruvananthapuram, India</div>
+          <ul class="tl-bullets">
+            <li>Led interdisciplinary team to develop Kerala's first customizable ergonomic mouse using human-centric design.</li>
+            <li>Directed FLIP Mouse redesign at 93% cost reduction without compromising functionality.</li>
+            <li>Created tech incubator framework supporting FOSS startups; served as transitional manager.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="professional">
+          <div class="tl-date">2016 – 2017</div>
+          <div class="tl-role">Technology Innovation Fellow & Consultant</div>
+          <div class="tl-org">Kerala Startup Mission</div>
+          <div class="tl-loc">Thiruvananthapuram, India</div>
+          <ul class="tl-bullets">
+            <li>Designed and piloted IEDC Summit '16 and Seeding Kerala '17.</li>
+            <li>Facilitated design thinking workshops; represented the org at national and international forums.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="entrepreneurial">
+          <div class="tl-date">2013 – Present</div>
+          <div class="tl-role">Co-founder & Managing Trustee</div>
+          <div class="tl-org">Sahridhaya</div>
+          <div class="tl-loc">Thiruvananthapuram, India</div>
+          <ul class="tl-bullets">
+            <li>Nonprofit creating skill-building and community engagement for youth — now in its 12th year.</li>
+            <li>Initiatives across child rights, gender equality, disability rights, climate activism, and health equity.</li>
+            <li>Secured grants from state, federal, and international agencies including UNDP.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="entrepreneurial">
+          <div class="tl-date">2020 – 2022</div>
+          <div class="tl-role">CoFounder & Member</div>
+          <div class="tl-org">SALAM</div>
+          <div class="tl-loc">New York City</div>
+          <ul class="tl-bullets">
+            <li>Policy consultant for a progressive candidate in NYC council elections '21.</li>
+            <li>Researched and created policy recommendations in education, small businesses, and worker rights.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="entrepreneurial">
+          <div class="tl-date">2017 – 2019</div>
+          <div class="tl-role">Founding Member & Senior Mentor</div>
+          <div class="tl-org">Green Army International</div>
+          <div class="tl-loc">Thiruvananthapuram, India</div>
+          <ul class="tl-bullets">
+            <li>Co-created a city government-backed platform introducing students to climate change and waste management.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+        <div class="tl-item" data-cat="entrepreneurial">
+          <div class="tl-date">2018 – 2019</div>
+          <div class="tl-role">Program Director</div>
+          <div class="tl-org">CUB — Creating Unique Brains</div>
+          <div class="tl-loc">Thiruvananthapuram, India</div>
+          <ul class="tl-bullets">
+            <li>State government-funded pilot bringing technology and experiential learning to public schools under Sahridhaya.</li>
+            <li>Designed syllabus and taught problem solving and design thinking.</li>
+          </ul>
+          <button class="tl-toggle">show more</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label reveal">Projects</p>
+    <h2 class="section-title reveal">Research & ventures</h2>
+
+    <div class="cards-grid">
+
+      <div class="card reveal">
+        <div class="card-title">Knowing, Trusting & Working in Metahuman Systems</div>
+        <div class="card-sub">PhD Dissertation — CWRU · Proposal defended May 2025</div>
+        <div class="card-desc">A longitudinal ethnography examining how knowledge workers and AI systems develop epistemic trust and distribute cognition in everyday practice.</div>
+        <div class="card-tags"><span class="card-tag">Ethnography</span><span class="card-tag">AI Trust</span><span class="card-tag">Distributed Cognition</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-title">PopCASE — Population Cancer Data Platform</div>
+        <div class="card-sub">NIH/NCI Cooperative Agreement U01CA284198</div>
+        <div class="card-desc">A portable informatics tool standardizing patient-level cancer registry data with community-level data on social conditions and health service availability.</div>
+        <div class="card-tags"><span class="card-tag">Health Informatics</span><span class="card-tag">NIH</span><span class="card-tag">Cancer Data</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-title">Ergonomic Assistive Mouse</div>
+        <div class="card-sub">ICFOSS · Grant from Ministry of Social Justice & Empowerment</div>
+        <div class="card-desc">Kerala's first customizable ergonomic mouse, developed through human-centric design. Led the FLIP Mouse redesign achieving 93% cost reduction.</div>
+        <div class="card-tags"><span class="card-tag">Assistive Tech</span><span class="card-tag">FOSS</span><span class="card-tag">HCD</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-title">Sahridhaya</div>
+        <div class="card-sub">Co-founder & Managing Trustee · 2013 – Present</div>
+        <div class="card-desc">Nonprofit creating skill-building and community engagement for youth across child rights, climate activism, health equity, and gender equality — now in its 12th year.</div>
+        <div class="card-tags"><span class="card-tag">Nonprofit</span><span class="card-tag">Youth</span><span class="card-tag">Social Justice</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-title">CUB — Creating Unique Brains</div>
+        <div class="card-sub">Program Director · State Government-funded</div>
+        <div class="card-desc">Pilot program introducing technology, experiential learning, and advanced problem-solving to public school students under the auspices of Sahridhaya.</div>
+        <div class="card-tags"><span class="card-tag">Ed-Tech</span><span class="card-tag">Design Thinking</span><span class="card-tag">Public Ed</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-title">Green Army International</div>
+        <div class="card-sub">Founding Member · City Govt. of Trivandrum</div>
+        <div class="card-desc">Platform introducing students to climate change and waste management through residential workshops and interactive sessions.</div>
+        <div class="card-tags"><span class="card-tag">Climate</span><span class="card-tag">Education</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="container">
+    <p class="section-label reveal">Teaching & Service</p>
+    <h2 class="section-title reveal">Teaching, talks & editorial work</h2>
+
+    <div class="reveal">
+      <div class="teaching-item">
+        <div class="teaching-role">Managing Editor · 2025 – 2026</div>
+        <div class="teaching-title">Design Issues Journal</div>
+        <div class="teaching-detail">Published by MIT Press</div>
+      </div>
+      <div class="teaching-item">
+        <div class="teaching-role">Adjunct Professor — Spring 2025</div>
+        <div class="teaching-title">MIDS 310 — Introduction to Information: A Systems and Design Approach</div>
+        <div class="teaching-detail">Evaluation: 4.30/5 · 55 students · Case Western Reserve University</div>
+      </div>
+      <div class="teaching-item">
+        <div class="teaching-role">Instructor — Spring 2025</div>
+        <div class="teaching-title">DESN 210 — Introduction to Programming for Business Applications</div>
+        <div class="teaching-detail">Evaluation: 4.41/5 · 40 students · Case Western Reserve University</div>
+      </div>
+      <div class="teaching-item">
+        <div class="teaching-role">Invited Lecture — Fall 2025</div>
+        <div class="teaching-title">AI, Workplace & Cognition</div>
+        <div class="teaching-detail">Cognitive Science Graduate Course, Dr. Mark Turner</div>
+      </div>
+      <div class="teaching-item">
+        <div class="teaching-role">Invited Lecture — Fall 2025</div>
+        <div class="teaching-title">AI, Inequality and Workplace</div>
+        <div class="teaching-detail">Leadership in Diversity & Inclusion, Dr. Anita Howard</div>
+      </div>
+      <div class="teaching-item">
+        <div class="teaching-role">Invited Lecture — 2025</div>
+        <div class="teaching-title">Introduction to Ethnography in Organizations</div>
+        <div class="teaching-detail">Doctoral Mixed Methods Course, Dr. Kalle Lyytinen</div>
+      </div>
+      <div class="teaching-item">
+        <div class="teaching-role">Invited Talk — 2025</div>
+        <div class="teaching-title">Moving Towards Metahuman Systems: A Workplace Where Humans + Machines Learn</div>
+        <div class="teaching-detail">Smart Med School: Faculty Edition, CME, CWRU School of Medicine</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 3rem;">
+      <p class="section-label">Awards & Recognitions</p>
+      <ul class="awards-list">
+        <li class="award-item"><span class="award-year">2026</span><span class="award-text">Best Student Paper Award — 21st MWAIS, Athens</span></li>
+        <li class="award-item"><span class="award-year">2025</span><span class="award-text">Best Conceptual Research Paper Award — DSI Annual Conference, Orlando</span></li>
+        <li class="award-item"><span class="award-year">2025</span><span class="award-text">Graduate Student Travel Award — School of Graduate Studies, CWRU</span></li>
+        <li class="award-item"><span class="award-year">2022</span><span class="award-text">Outstanding Student Award — Milano School, The New School</span></li>
+        <li class="award-item"><span class="award-year">2021</span><span class="award-text">Lifetime Membership — Nu Lambda Mu International Honor Society</span></li>
+        <li class="award-item"><span class="award-year">2019</span><span class="award-text">Dean's Merit Scholarship — The New School</span></li>
+        <li class="award-item"><span class="award-year">2010</span><span class="award-text">Academic Excellence Award — Computer Science Stream, Senior Secondary Education</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label reveal">Education</p>
+    <h2 class="section-title reveal">Academic path</h2>
+
+    <div class="cards-grid">
+      <div class="edu-card reveal">
+        <div class="edu-years">2022 – 2027 (expected)</div>
+        <div class="edu-degree">Doctor of Philosophy in Management — Design & Innovation</div>
+        <div class="edu-school">Case Western Reserve University</div>
+        <div class="edu-loc">Cleveland, Ohio</div>
+        <div class="edu-note">Dissertation: <em>Knowing, Trusting & Working in Metahuman Systems: A Longitudinal Ethnography of Everyday Knowledge Work</em>. Proposal defended May 2025. Committee: Kalle Lyytinen (Chair), Sirkka Jarvenpaa, John Paul Stephens, Mark Turner, Youngjin Yoo.</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-years">2019 – 2021</div>
+        <div class="edu-degree">Master of Science in Nonprofit Management</div>
+        <div class="edu-school">The New School</div>
+        <div class="edu-loc">New York City</div>
+        <div class="edu-note">Minor in Global Urban Futures from Julien J. Studley Graduate Programs in International Affairs. Thesis: <em>Urban food environments: A case study of a Harlem neighborhood</em>.</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-years">2010 – 2014</div>
+        <div class="edu-degree">Bachelor of Technology in Mechanical Automobile Engineering</div>
+        <div class="edu-school">University of Kerala</div>
+        <div class="edu-loc">Thiruvananthapuram, India</div>
+        <div class="edu-note">Thesis: <em>Design, Fabrication, and Analysis of RCCI engine to test for low emission</em>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label reveal">Contact</p>
+    <h2 class="section-title reveal">Let's get a coffee or maybe talk.</h2>
+    <p class="section-subtitle reveal">Research collaboration, social impact work, or just a conversation.</p>
+
+    <div class="reveal">
+      <ul class="contact-list" style="max-width:480px;">
+        <li><div class="cl-label">Location</div><div class="cl-value">Cleveland, Ohio</div></li>
+        <li><div class="cl-label">Email</div><div class="cl-value"><a href="mailto:sg@case.edu">sg@case.edu</a></div></li>
+        <li><div class="cl-label">Web</div><div class="cl-value"><a href="https://sgakhil.github.io/">sgakhil.github.io</a></div></li>
+      </ul>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/aklsg/" target="_blank" class="social-link">LinkedIn</a>
+        <a href="https://medium.com/@aklsg" target="_blank" class="social-link">Medium</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=H8hewOwAAAAJ" target="_blank" class="social-link">Scholar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">Akhil S. G. · Researcher · Social Entrepreneur · © 2026</div>
+</footer>
+
+<script>
+// Theme toggle
+document.getElementById('themeToggle').addEventListener('click', function() {
+  const h = document.documentElement;
+  const d = h.dataset.theme === 'dark';
+  h.dataset.theme = d ? 'light' : 'dark';
+  this.textContent = d ? '🌙' : '☀️';
+});
+
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// Experience section collapse/expand
+document.getElementById('expToggle').addEventListener('click', function() {
+  const content = document.getElementById('expContent');
+  const expanded = content.classList.toggle('expanded');
+  this.classList.toggle('open', expanded);
+  this.innerHTML = expanded
+    ? 'Hide experience <span class="arrow">▲</span>'
+    : 'Show experience <span class="arrow">▼</span>';
+});
+
+// Experience filter tabs
+document.querySelectorAll('#expFilters .filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#expFilters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
+    });
+  });
+});
+
+// Timeline detail toggles
+document.querySelectorAll('.tl-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const bullets = btn.previousElementSibling;
+    const open = bullets.classList.toggle('open');
+    btn.textContent = open ? 'show less' : 'show more';
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Publication tabs
+document.querySelectorAll('#pubFilters .filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#pubFilters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const mode = btn.dataset.pub;
+    document.querySelectorAll('.pub-item').forEach(item => {
+      if (mode === 'all') {
+        item.style.display = '';
+        item.classList.add('show');
+      } else {
+        item.style.display = item.dataset.pubcat === 'selected' ? '' : 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
 </html>
