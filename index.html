@@ -199,6 +199,34 @@ h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; margin: 2.2
 .inline-note { font-size: 0.9rem; color: var(--text-light); padding: 1rem 0; }
 .inline-note b { color: var(--text); font-weight: 600; }
 
+/* ─────────── PROJECTS ─────────── */
+.proj-group { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 1rem; }
+.proj-group:not(:first-of-type) { margin-top: 2.75rem; }
+.proj-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.proj {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--card-bg);
+  transition: box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.proj:hover { box-shadow: var(--shadow); border-color: var(--accent); }
+.proj-thumb { display: block; aspect-ratio: 16 / 9; background: var(--bg-alt); border-bottom: 1px solid var(--border); overflow: hidden; }
+.proj-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; transition: transform 0.4s var(--ease); }
+.proj-thumb.fit img { object-fit: contain; object-position: center; padding: 0.75rem; background: #fff; }
+.proj:hover .proj-thumb img { transform: scale(1.02); }
+.proj-body { display: flex; flex-direction: column; flex: 1; padding: 1.4rem 1.5rem 1.5rem; }
+.proj-meta { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.04em; }
+.proj-title { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; line-height: 1.25; margin-top: 0.35rem; }
+.proj-tag { font-size: 0.92rem; color: var(--accent); font-weight: 500; margin-top: 0.15rem; }
+.proj-desc { font-size: 0.92rem; color: var(--text-light); margin-top: 0.75rem; }
+.proj-facts { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; }
+.proj-facts span { font-size: 0.75rem; font-weight: 500; padding: 0.15rem 0.55rem; border-radius: 4px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text-light); }
+.proj-links { margin-top: auto; padding-top: 1.1rem; display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.proj-links a { font-size: 0.86rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+.proj-links svg { width: 15px; height: 15px; fill: currentColor; }
+.proj-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1280px) { .proj-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.proj-note { font-size: 0.88rem; color: var(--text-light); margin-top: 1rem; max-width: 80ch; }
+
 /* ─────────── TEACHING ─────────── */
 .course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .course { border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; background: var(--card-bg); transition: all 0.25s var(--ease); }
@@ -293,6 +321,8 @@ h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; margin: 2.2
 
 footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 
+#education .list li { gap: 1.5rem; }
+
 /* ─────────── REVEAL ─────────── */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
 .reveal.show { opacity: 1; transform: none; }
@@ -323,7 +353,7 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   main { padding: 1rem 1rem 2rem; }
   h2 { font-size: 1.65rem; }
   .about-lead { font-size: 1.35rem; }
-  .themes, .course-grid, .two-col, .grants { grid-template-columns: 1fr; }
+  .themes, .course-grid, .two-col, .grants, .proj-grid, .proj-grid.three { grid-template-columns: 1fr; }
   .entry, .edu, .list li { grid-template-columns: 1fr; gap: 0.2rem; }
 }
 </style>
@@ -361,6 +391,7 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   <ul class="side-nav" id="sideNav">
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#teaching">Teaching</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#service">Service & Awards</a></li>
@@ -380,7 +411,7 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
     <div class="prose">
       <p>I'm a PhD candidate in Management (Information Systems) at the Weatherhead School of Management, Case Western Reserve University, graduating by May 2027. My dissertation is a 25-month ethnography of radiologists working alongside FDA-cleared AI models — tracing how epistemic trust forms, why doubt does useful work, and how much invisible labor goes into making AI outputs usable in everyday practice.</p>
       <p>Alongside this, I study <strong>algorithmic management</strong> — power, precarity, and loneliness in platform work — and <strong>health data infrastructures</strong>, as part of the NIH/NCI-funded team building PopCASE, a population cancer data platform.</p>
-      <p>Before the PhD, I trained as a mechanical engineer and in nonprofit management. In 2013 I co-founded <strong>Sahridhaya</strong>, a youth-focused nonprofit in Kerala, and later worked with Kerala Startup Mission and the International Centre for Free and Open-Source Software on innovation programs and assistive technology.</p>
+      <p>Before the PhD, I trained as a mechanical engineer and in nonprofit management. In 2013 I co-founded <strong><a href="https://sahridhaya.org/" target="_blank" rel="noopener">Sahridhaya</a></strong>, a youth-focused nonprofit in Kerala, and later worked with Kerala Startup Mission and the International Centre for Free and Open-Source Software on innovation programs and assistive technology.</p>
     </div>
 
     <div class="diss">
@@ -415,7 +446,7 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 <!-- RESEARCH -->
 <section id="research">
   <p class="eyebrow">Research</p>
-  <h2>Publications & work in progress</h2>
+  <h2>Publications & presentations</h2>
   <p class="lede">Start with the highlights, or browse everything by type. Switch to <b>Detailed</b> to read every available abstract.</p>
 
   <div class="research-bar">
@@ -424,9 +455,8 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
     <button class="tab" data-panel="p-journal">Journal articles <span class="count">2</span></button>
     <button class="tab" data-panel="p-proc">Conference proceedings <span class="count">7</span></button>
     <button class="tab" data-panel="p-books">Books & chapters <span class="count">5</span></button>
-    <button class="tab" data-panel="p-wip">Work in progress <span class="count">8</span></button>
     <button class="tab" data-panel="p-talks">Talks & workshops</button>
-    <button class="tab" data-panel="p-public">Public scholarship <span class="count">2</span></button>
+    <button class="tab" data-panel="p-public">Public scholarship <span class="count">3</span></button>
   </div>
   <div class="view-toggle" role="group" aria-label="Publication view">
     <button type="button" data-view="compact" aria-pressed="true">Compact</button>
@@ -446,13 +476,13 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
           <div class="entry-venue"><i>JCO Clinical Cancer Informatics</i>, 10(2), e2500168</div>
         </div>
       </li>
-      <li class="entry">
-        <div class="entry-year">Forthcoming</div>
+      <li class="entry" data-paper="routledge">
+        <div class="entry-year">2027</div>
         <div>
           <div class="entry-kind">Book</div>
           <div class="entry-title">Algorithmic Management: Artificial Intelligence and the Transformation of Organizations</div>
           <div class="entry-authors">Poonamallee, L., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">Routledge · Final manuscript submitted August 2026</div>
+          <div class="entry-venue">Routledge · Forthcoming March 2027</div>
         </div>
       </li>
       <li class="entry" data-paper="amcis26">
@@ -588,13 +618,13 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   <div class="panel" id="p-books">
     <div class="group-label">Books</div>
     <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">Forthcoming</div>
+      <li class="entry" data-paper="routledge">
+        <div class="entry-year">2027</div>
         <div>
           <div class="entry-kind">Authored book</div>
           <div class="entry-title">Algorithmic Management: Artificial Intelligence and the Transformation of Organizations</div>
           <div class="entry-authors">Poonamallee, L., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">Routledge · Final manuscript submitted August 2026</div>
+          <div class="entry-venue">Routledge · Forthcoming March 2027</div>
         </div>
       </li>
       <li class="entry" data-paper="book">
@@ -636,84 +666,6 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
     </ul>
   </div>
 
-  <!-- WORK IN PROGRESS -->
-  <div class="panel" id="p-wip">
-    <div class="group-label">Manuscripts nearing submission</div>
-    <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">Sep 2026</div>
-        <div>
-          <div class="entry-title">Generative AI and Organization Studies: Doctrine, Detachment, Domination, and the Production of Unverifiable Knowledge</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, Bharati, P., & Mahalingam, R.</div>
-          <div class="entry-venue">Target: <i>Organization Studies</i></div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">Nov 2026</div>
-        <div>
-          <div class="entry-title">Epistemic Trust in Human–AI Delegation: Decision-Making in Knowledge Work</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Target: <i>MIS Quarterly</i></div>
-          <div class="entry-note">Earlier versions at AOM 2025 and DSI 2025 (Best Conceptual Research Paper Award)</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">Dec 2026</div>
-        <div>
-          <div class="entry-title">When Knowing Is Unknowable: Trust and Distributed Cognition in Human–AI Systems</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Target: <i>Organization Science</i></div>
-          <div class="entry-note">Earlier versions at ICIS 2025 and AOM 2026</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">Feb 2027</div>
-        <div>
-          <div class="entry-title">Invisible Labor of Argumentation: How Radiologists Interpret AI in Everyday Practice</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Target: <i>Administrative Science Quarterly</i></div>
-          <div class="entry-note">Earlier versions at AMCIS 2026 (Top 25% Paper) and ICIS 2026</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">Complete</div>
-        <div>
-          <div class="entry-title">To Err Is Human, to Forgive Divine — But When to Err Is AI, Can Humans Forgive?</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Target: <i>Information and Organization</i></div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">In prep</div>
-        <div>
-          <div class="entry-title">Don't Design Away Doubt: Why Epistemic Trust Needs Doubt in AI Workflows</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Target: <i>Phenomenology and the Cognitive Sciences</i></div>
-          <div class="entry-note">Earlier version at MWAIS 2026 (Best Student Paper Award)</div>
-        </div>
-      </li>
-    </ul>
-    <div class="group-label">Ongoing studies</div>
-    <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">Ongoing</div>
-        <div>
-          <div class="entry-title">Surviving the Algorithm: How Workers Navigate Alienation and Loneliness in Platform Work</div>
-          <div class="entry-authors">Bhowmick, T., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">Target: <i>Human Relations</i></div>
-          <div class="entry-note">Presented at the Business and Modern Slavery Conference 2026; accepted at the 4th Global Conference on Caste, Business and Society 2026</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">Ongoing</div>
-        <div>
-          <div class="entry-title">Using i* for Modeling the Cancer Data Ecosystem in the United States</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, Lyytinen, K., Rose, J., & Koroukian, S. M.</div>
-          <div class="entry-venue">Target: <i>Requirements Engineering</i></div>
-        </div>
-      </li>
-    </ul>
-  </div>
 
   <!-- TALKS -->
   <div class="panel" id="p-talks">
@@ -839,6 +791,16 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
         </div>
       </li>
       <li class="entry">
+        <div class="entry-year">2020</div>
+        <div>
+          <div class="entry-kind">Article</div>
+          <div class="entry-title">The New School Is in Crisis</div>
+          <div class="entry-authors">Bardia, A., Yadav, S., Rajapaksha, K., & <b>S. G., Akhil</b></div>
+          <div class="entry-venue"><i>Jacobin</i> · December 2, 2020</div>
+          <a class="entry-link" href="https://jacobin.com/2020/12/the-new-school-nssr-austerity-covid-neoliberalism" target="_blank" rel="noopener">Read article →</a>
+        </div>
+      </li>
+      <li class="entry">
         <div class="entry-year">2017</div>
         <div>
           <div class="entry-kind">Report</div>
@@ -849,6 +811,90 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
       </li>
     </ul>
   </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="eyebrow">Projects</p>
+  <h2>Open-source projects</h2>
+  <p class="lede">Software I build on my own for research and deep work, and the assistive technology I led at the International Centre for Free and Open-Source Software.</p>
+
+  <p class="proj-group">Software · solo projects</p>
+  <div class="proj-grid three">
+    <article class="proj reveal">
+      <a class="proj-thumb" href="https://github.com/sgakhil/marginalia" target="_blank" rel="noopener" tabindex="-1">
+        <img src="https://raw.githubusercontent.com/sgakhil/marginalia/main/assets/paper.png" alt="Marginalia showing today's paper with its abstract, reading actions and publication details" loading="lazy">
+      </a>
+      <div class="proj-body">
+        <div class="proj-meta">2026 · Python</div>
+        <div class="proj-title">Marginalia</div>
+        <div class="proj-tag">A local-first reading companion for academic research</div>
+        <p class="proj-desc">A Linux desktop app that connects your Zotero library to a language model running on your own machine. It brings back one paper a day from your own library and prepares you to read it: questions to carry into the full text, your own notes on it, and related papers you already have. It asks questions instead of writing summaries, so the reading is still yours.</p>
+        <div class="proj-facts"><span>Zotero</span><span>Ollama</span><span>Obsidian</span><span>GTK 4</span><span>Runs fully offline</span></div>
+        <div class="proj-links"><a href="https://github.com/sgakhil/marginalia" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <a class="proj-thumb fit" href="https://github.com/sgakhil/dcog-lexicon" target="_blank" rel="noopener" tabindex="-1">
+        <img src="https://raw.githubusercontent.com/sgakhil/dcog-lexicon/main/renders/vignette2_decision_support.png" alt="An activity map tracing one radiology episode across four screens, from worklist to signed report" loading="lazy">
+      </a>
+      <div class="proj-body">
+        <div class="proj-meta">2026 · Python</div>
+        <div class="proj-title">dcog-lexicon</div>
+        <div class="proj-tag">Mapping how cognition is shared between people and AI</div>
+        <p class="proj-desc">A codebook and local AI tool that turns ethnographic fieldnotes into activity maps of human–AI work: who or what did each step, on which screen, and how each claim was checked, accepted or left open. The model runs on the researcher's own machine, because fieldnotes from hospitals and other sensitive sites can't go to a cloud service. It drafts a map; the researcher checks and corrects it.</p>
+        <div class="proj-facts"><span>Ethnography</span><span>Distributed cognition</span><span>Ollama</span><span>JSON Schema</span><span>Process mining</span></div>
+        <div class="proj-links"><a href="https://github.com/sgakhil/dcog-lexicon" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <a class="proj-thumb fit" href="https://github.com/sgakhil/dreamon" target="_blank" rel="noopener" tabindex="-1">
+        <img src="https://raw.githubusercontent.com/sgakhil/dreamon/main/assets/today-light-dark.png" alt="DreamON's Today page in light and dark, with the day's ensō and a button to begin a sitting" loading="lazy">
+      </a>
+      <div class="proj-body">
+        <div class="proj-meta">2026 · JavaScript &amp; Python</div>
+        <div class="proj-title">DreamON</div>
+        <div class="proj-tag">A quiet room for deep work on GNOME</div>
+        <p class="proj-desc">A top-bar extension that keeps only one practice's apps on screen for a sitting: reading in Zotero and Obsidian, or writing and reviewing in Google Docs. Other windows, notifications and off-task browser tabs are set aside until the bell. A companion app shows what the practice adds up to: sittings, pages read, streaks and the distractions that pulled at you.</p>
+        <div class="proj-facts"><span>GNOME Shell extension</span><span>GTK 4</span><span>Zotero</span><span>Runs fully offline</span></div>
+        <div class="proj-links"><a href="https://github.com/sgakhil/dreamon" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a></div>
+      </div>
+    </article>
+  </div>
+
+  <p class="proj-group">Assistive technology · ICFOSS · Researcher & Project Manager</p>
+  <div class="proj-grid">
+    <article class="proj reveal">
+      <a class="proj-thumb fit" href="https://gitlab.com/icfoss/Assistive_Tech/t_slide_mouse" target="_blank" rel="noopener" tabindex="-1">
+        <img src="https://gitlab.com/icfoss/Assistive_Tech/t_slide_mouse/-/raw/master/images/T_SLide_Mouse.jpg" alt="The T-Slide Mouse, a 3D-printed handheld mouse with a thumb-slide joystick" loading="lazy" onerror="this.parentElement.remove()">
+      </a>
+      <div class="proj-body">
+        <div class="proj-meta">2018 · Hardware &amp; firmware</div>
+        <div class="proj-title">T-Slide Mouse</div>
+        <div class="proj-tag">Kerala's first customizable ergonomic mouse</div>
+        <p class="proj-desc">An open-source USB mouse for persons with disabilities, operated with a thumb-slide joystick and two touch sensors, with optional vibration for haptic feedback. It runs on an Arduino Pro Micro and registers as a standard USB input device, so it works on any computer without drivers. The case is 3D printed, and the firmware is calibrated to each user.</p>
+        <div class="proj-facts"><span>Arduino (ATmega32U4)</span><span>USB HID</span><span>3D printed</span><span>Human-centered design</span></div>
+        <div class="proj-links"><a href="https://gitlab.com/icfoss/Assistive_Tech/t_slide_mouse" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m15.73 6.34-.02-.06-2.18-5.7a.57.57 0 0 0-1.08.04l-1.47 4.5H5.02L3.55.62a.57.57 0 0 0-1.08-.04L.29 6.28l-.02.06a4.04 4.04 0 0 0 1.34 4.67l.01.01.02.01 3.31 2.48 1.64 1.24 1 .76a.67.67 0 0 0 .81 0l1-.76 1.64-1.24 3.33-2.5.01-.01a4.04 4.04 0 0 0 1.34-4.66z"/></svg> View on GitLab</a><a href="https://gitlab.com/icfoss/Assistive_Tech/t_slide_mouse/tree/master/Design/Tslide_Mouse_Design_Documentation.pdf" target="_blank" rel="noopener">Design document →</a></div>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <a class="proj-thumb fit" href="https://gitlab.com/icfoss/Assistive_Tech/flipmouse" target="_blank" rel="noopener" tabindex="-1">
+        <img src="https://gitlab.com/icfoss/Assistive_Tech/flipmouse/-/raw/master/FLip%20Mouse%20Brochure/FLip%20Mouse%20Brochure_1.jpg" alt="First page of the FLipMouse brochure" loading="lazy" onerror="this.parentElement.remove()">
+      </a>
+      <div class="proj-body">
+        <div class="proj-meta">2019 · Hardware</div>
+        <div class="proj-title">FLipMouse redesign</div>
+        <div class="proj-tag">The same assistive device at 93% lower cost</div>
+        <p class="proj-desc">A redesign of the open-source FLipMouse assistive input device that cut its cost by 93% without giving up functionality.</p>
+        <div class="proj-facts"><span>93% cost reduction</span><span>Design for cost</span><span>Open hardware</span></div>
+        <div class="proj-links"><a href="https://gitlab.com/icfoss/Assistive_Tech/flipmouse" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m15.73 6.34-.02-.06-2.18-5.7a.57.57 0 0 0-1.08.04l-1.47 4.5H5.02L3.55.62a.57.57 0 0 0-1.08-.04L.29 6.28l-.02.06a4.04 4.04 0 0 0 1.34 4.67l.01.01.02.01 3.31 2.48 1.64 1.24 1 .76a.67.67 0 0 0 .81 0l1-.76 1.64-1.24 3.33-2.5.01-.01a4.04 4.04 0 0 0 1.34-4.66z"/></svg> View on GitLab</a></div>
+      </div>
+    </article>
+  </div>
+  <p class="proj-note">The assistive technology work was funded by a grant I wrote to India's Ministry of Social Justice &amp; Empowerment (Department of Empowerment of Persons with Disabilities).</p>
 </section>
 
 <!-- TEACHING -->
@@ -910,54 +956,69 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 
   <div class="exp-body">
     <div class="tabs" data-filter-group="exp">
-      <button class="tab active" data-filter="all">All</button>
-      <button class="tab" data-filter="research">Research</button>
-      <button class="tab" data-filter="professional">Professional</button>
-      <button class="tab" data-filter="nonprofit">Nonprofit</button>
+      <button class="tab active" data-filter="academia">Academia</button>
+      <button class="tab" data-filter="beyond">Beyond academia</button>
     </div>
 
     <div class="timeline">
-      <div class="tl" data-cat="research">
+      <div class="tl" data-cat="academia">
         <div class="tl-head"><div class="tl-role">Research Team Member, NIH/NCI Cooperative Agreement U01CA284198</div><div class="tl-date">2023 – 2026</div></div>
         <div class="tl-org">Case Comprehensive Cancer Center <span>· Cleveland</span></div>
         <div class="tl-desc">Developing PopCASE, a portable informatics tool that integrates patient-level cancer registry data with community-level data on social conditions and health services. I lead user research with registries, researchers, and outreach centers through interviews and group meetings to inform its design. PI: Dr. Johnie Rose; Co-PI: Dr. Kalle Lyytinen.</div>
       </div>
-      <div class="tl" data-cat="research">
+      <div class="tl" data-cat="academia">
+        <div class="tl-head"><div class="tl-role">Managing &amp; Production Editor</div><div class="tl-date">2025 – 2026</div></div>
+        <div class="tl-org"><i>Design Issues</i> <span>· MIT Press</span></div>
+      </div>
+      <div class="tl" data-cat="academia">
         <div class="tl-head"><div class="tl-role">Research Assistant, Office of Strategic Research</div><div class="tl-date">2024 – 2025</div></div>
         <div class="tl-org">Weatherhead School of Management, CWRU <span>· Cleveland</span></div>
         <div class="tl-desc">Built a grants database for the school and curated and wrote its weekly newsletter on research activities and opportunities.</div>
       </div>
-      <div class="tl" data-cat="research">
+      <div class="tl" data-cat="academia">
         <div class="tl-head"><div class="tl-role">Research Assistant to Dr. Latha Poonamallee</div><div class="tl-date">2021 – 2022</div></div>
         <div class="tl-org">Milano School of Management, Policy and Environment, The New School <span>· New York</span></div>
         <div class="tl-desc">Built a research database on Indian social ventures and studied the legal structure choices of social enterprises.</div>
       </div>
-      <div class="tl" data-cat="professional">
+      <div class="tl" data-cat="academia">
+        <div class="tl-head"><div class="tl-role">Union Representative</div><div class="tl-date">2020 – 2021</div></div>
+        <div class="tl-org">SENS–UAW, The New School <span>· New York</span></div>
+      </div>
+      <div class="tl" data-cat="beyond">
         <div class="tl-head"><div class="tl-role">Grants Manager (Intern)</div><div class="tl-date">2021</div></div>
         <div class="tl-org">New York City Economic Development Corporation <span>· New York</span></div>
         <div class="tl-desc">Wrote grant narratives for state and federal proposals, including HUD CDBG-DR and NYS CFA; improved cost-reasonableness processes to reduce redundancy and prevent mismanagement.</div>
       </div>
-      <div class="tl" data-cat="professional">
+      <div class="tl" data-cat="beyond">
         <div class="tl-head"><div class="tl-role">Special Projects Manager</div><div class="tl-date">2020 – 2021</div></div>
         <div class="tl-org">The New School <span>· New York</span></div>
         <div class="tl-desc">Led the ‘Management and Social Justice’ 2020–21 online conversation series, curating panels across media, education, healthcare, and technology.</div>
       </div>
-      <div class="tl" data-cat="professional">
+      <div class="tl" data-cat="beyond">
         <div class="tl-head"><div class="tl-role">Researcher, Assistive Technology & Interim Manager, FOSS Incubator</div><div class="tl-date">2017 – 2019</div></div>
         <div class="tl-org">International Centre for Free and Open-Source Software <span>· Thiruvananthapuram</span></div>
         <div class="tl-desc">Led an interdisciplinary team using human-centered design to build Kerala's first customizable ergonomic mouse, and redesigned the F-LIP Mouse at 93% lower cost. Created an incubator framework for FOSS startups and served as transitional manager.</div>
       </div>
-      <div class="tl" data-cat="professional">
+      <div class="tl" data-cat="beyond">
         <div class="tl-head"><div class="tl-role">Technology Innovation Fellow & Consultant</div><div class="tl-date">2016 – 2017</div></div>
         <div class="tl-org">Kerala Startup Mission <span>· Thiruvananthapuram</span></div>
         <div class="tl-desc">Led and piloted entrepreneur and investor meetups, facilitated design thinking and leadership workshops, and represented the organization at national and international forums.</div>
       </div>
-      <div class="tl" data-cat="nonprofit">
+      <div class="tl" data-cat="beyond">
+        <div class="tl-head"><div class="tl-role">Relationship Manager (Apprenticeship)</div><div class="tl-date">2015 – 2016</div></div>
+        <div class="tl-org">Mahindra &amp; Mahindra, Automotive and Farm Equipment Business <span>· Thiruvananthapuram</span></div>
+      </div>
+      <div class="tl" data-cat="beyond">
         <div class="tl-head"><div class="tl-role">Co-founder & Managing Trustee</div><div class="tl-date">2013 – Present</div></div>
-        <div class="tl-org">Sahridhaya <span>· Thiruvananthapuram</span></div>
+        <div class="tl-org"><a href="https://sahridhaya.org/" target="_blank" rel="noopener">Sahridhaya</a> <span>· Thiruvananthapuram</span></div>
         <div class="tl-desc">Started the nonprofit to create skill-building and community engagement opportunities for young people addressing social issues.</div>
       </div>
-      <div class="tl" data-cat="nonprofit">
+      <div class="tl" data-cat="beyond">
+        <div class="tl-head"><div class="tl-role">Program Director</div><div class="tl-date">2018 – 2019</div></div>
+        <div class="tl-org">CUB – Creating Unique Brains <span>· Thiruvananthapuram</span></div>
+        <div class="tl-desc">Co-wrote the grant proposal, funded by the Kerala State Government, for a pilot under Sahridhaya that brought technology and experiential learning into public schools. Designed the syllabus and taught problem solving and design thinking.</div>
+      </div>
+      <div class="tl" data-cat="beyond">
         <div class="tl-head"><div class="tl-role">Founding Member & Senior Mentor</div><div class="tl-date">2017 – 2019</div></div>
         <div class="tl-org">Green Army International <span>· Thiruvananthapuram</span></div>
         <div class="tl-desc">Co-created a platform introducing students to climate change and waste management through activities and interactive sessions, under the City Government of Trivandrum.</div>
@@ -996,11 +1057,11 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
     <div>
       <h3 style="margin-top:0;">Service</h3>
       <ul class="list">
-        <li><span class="yr">2025 – 26</span><span class="what"><b>Managing & Production Editor</b> — <i>Design Issues</i> (MIT Press)</span></li>
         <li><span class="yr">Reviewer</span><span class="what"><b>Journals:</b> <i>Journal of Management Information Systems</i> (2026), <i>Information Technology for Development</i> (2026), <i>European Journal of Information Systems</i> (2024)</span></li>
         <li><span class="yr">Reviewer</span><span class="what"><b>Conferences:</b> ICIS (2024–), AOM (2023–), HICSS (2023–)</span></li>
         <li><span class="yr">2025, 2026</span><span class="what"><b>Organizing Committee</b> — Management & Social Justice Conference</span></li>
-        <li><span class="yr">2020 – 21</span><span class="what"><b>Senator</b>, University Student Senate, and <b>Union Representative</b>, SENS–UAW — The New School</span></li>
+        <li><span class="yr">2026 –</span><span class="what"><b>Co-founder</b>, <a href="https://dataandlabor.substack.com/about" target="_blank" rel="noopener">Data &amp; Labor Organizing</a> — an online reading circle on data as a resource for collective action at work, with Stig Nyman (Lund University) and Rick Sullivan (HEC Montréal)</span></li>
+        <li><span class="yr">2020 – 21</span><span class="what"><b>Senator</b>, University Student Senate — The New School</span></li>
       </ul>
     </div>
   </div>
@@ -1063,6 +1124,12 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
       <div class="edu-school">University of Kerala, Thiruvananthapuram</div>
     </div>
   </div>
+
+  <h3>Certificates</h3>
+  <ul class="list">
+    <li><span class="yr">2019</span><span class="what"><b>Design and Evaluation of Innovation Policy</b> — United Nations University</span></li>
+    <li><span class="yr">2016</span><span class="what"><b>Management Development Program</b> — Indian Institute of Management Kozhikode</span></li>
+  </ul>
 </section>
 
 
@@ -1110,7 +1177,7 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   </div>
 </div>
 
-<footer>Akhil S. G. · Last updated September 2026</footer>
+<footer>Akhil S. G. · Last updated November 2026</footer>
 </main>
 </div>
 
@@ -1152,7 +1219,9 @@ const PAPERS = {
   icis25:  { url: 'https://aisel.aisnet.org/icis2025/conf_theme/conf_theme/5', label: 'Read paper', src: 'AIS eLibrary' },
   dsi25:   { url: 'https://decisionsciences.org/conference/annual-2025/2025-annual-conference-institute-and-conference-award-winners/', label: 'Award announcement' },
   aom25:   { url: 'https://journals.aom.org/doi/10.5465/AMPROC.2025.22130abstract', label: 'Read paper' },
+  icis26:  { url: 'https://aisel.aisnet.org/icis2026/fow/fow/25', label: 'Read paper', src: 'AIS eLibrary' },
   aom26:   { url: 'https://journals.aom.org/doi/abs/10.5465/AMPROC.2026.19755abstract', label: 'Read paper' },
+  routledge: { url: 'https://www.routledge.com/Algorithmic-Management-Artificial-Intelligence-and-the-Transformation-of-Organizations/Poonamallee-SG/p/book/9781041305682', label: 'View book' },
   book:    { url: 'https://link.springer.com/book/10.1007/978-3-032-20821-7', label: 'View book', src: 'Springer Nature' },
   chrev:   { url: 'https://link.springer.com/chapter/10.1007/978-3-032-20821-7_2', label: 'Read chapter', src: 'Springer Nature' },
   chcovid: { url: 'https://link.springer.com/chapter/10.1007/978-3-031-19971-4_7', label: 'Read chapter', src: 'Springer Nature' },
@@ -1207,10 +1276,11 @@ document.querySelectorAll('[data-filter-group="exp"] .tab').forEach(btn => {
     btn.classList.add('active');
     const f = btn.dataset.filter;
     document.querySelectorAll('#experience .tl').forEach(el => {
-      el.style.display = (f === 'all' || el.dataset.cat === f) ? '' : 'none';
+      el.style.display = el.dataset.cat === f ? '' : 'none';
     });
   });
 });
+document.querySelector('[data-filter-group="exp"] .tab.active')?.click();
 
 // Sidebar scrollspy
 const navLinks = [...document.querySelectorAll('#sideNav a')];
