@@ -5,8 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akhil S. G. — Researcher & Social Entrepreneur</title>
 <meta name="description" content="Akhil S. G. is a PhD candidate in Information Systems at Case Western Reserve University studying how knowledge work changes when AI joins the team.">
+<link rel="canonical" href="https://sgakhil.github.io/">
+<meta name="author" content="Akhil S. G.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B71C1C'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='30' fill='white'%3ESG%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1f2e" media="(prefers-color-scheme: dark)">
+<!-- Link previews (LinkedIn, Slack, email, X) -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Akhil S. G.">
+<meta property="og:title" content="Akhil S. G. — Researcher &amp; Social Entrepreneur">
+<meta property="og:description" content="Akhil S. G. is a PhD candidate in Information Systems at Case Western Reserve University studying how knowledge work changes when AI joins the team.">
+<meta property="og:url" content="https://sgakhil.github.io/">
+<meta property="og:image" content="https://sgakhil.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Akhil S. G., Researcher and Social Entrepreneur, PhD Candidate in Information Systems at Case Western Reserve University">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Akhil S. G. — Researcher &amp; Social Entrepreneur">
+<meta name="twitter:description" content="Akhil S. G. is a PhD candidate in Information Systems at Case Western Reserve University studying how knowledge work changes when AI joins the team.">
+<meta name="twitter:image" content="https://sgakhil.github.io/assets/og-card.png">
+<!-- Tells search engines who this page is about -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Akhil S. G.",
+ "alternateName": [
+  "Akhil Sarangadharan GeethaKumari",
+  "Akhil SG",
+  "Akhil S.G."
+ ],
+ "url": "https://sgakhil.github.io/",
+ "image": "https://sgakhil.github.io/assets/images/header/avatar.jpg",
+ "email": "mailto:sg@case.edu",
+ "jobTitle": "PhD Candidate, Information Systems",
+ "affiliation": {
+  "@type": "CollegeOrUniversity",
+  "name": "Weatherhead School of Management, Case Western Reserve University"
+ },
+ "alumniOf": [
+  {
+   "@type": "CollegeOrUniversity",
+   "name": "The New School"
+  },
+  {
+   "@type": "CollegeOrUniversity",
+   "name": "University of Kerala"
+  }
+ ],
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Cleveland",
+  "addressRegion": "OH",
+  "addressCountry": "US"
+ },
+ "knowsAbout": [
+  "Human–AI collaboration",
+  "Epistemic trust",
+  "Distributed cognition",
+  "Algorithmic management",
+  "AI governance",
+  "Health data infrastructures",
+  "Ethnography"
+ ],
+ "identifier": {
+  "@type": "PropertyValue",
+  "propertyID": "ORCID",
+  "value": "0009-0001-3479-7391"
+ },
+ "sameAs": [
+  "https://orcid.org/0009-0001-3479-7391",
+  "https://scholar.google.com/citations?user=H8hewOwAAAAJ",
+  "https://www.linkedin.com/in/aklsg/",
+  "https://medium.com/@aklsg",
+  "https://github.com/sgakhil"
+ ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -14,6 +92,7 @@
   --serif: 'Source Serif 4', Georgia, serif;
   --sans: 'Source Sans 3', system-ui, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
 }
 [data-theme="light"] {
   --bg: #ffffff;
@@ -44,6 +123,7 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+@media (max-width: 900px) { html { scroll-padding-top: 4rem; } }
 body {
   font-family: var(--sans);
   font-size: 17px;
@@ -81,6 +161,7 @@ a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-
 }
 .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .name { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+.fullname .pronouns { white-space: nowrap; }
 .fullname { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 0.3rem; }
 .tagline { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-top: 0.9rem; }
 .affil { font-size: 0.88rem; color: var(--text-light); margin-top: 0.2rem; line-height: 1.5; }
@@ -92,7 +173,14 @@ a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-
   border-left: 2px solid transparent; transition: all 0.2s;
 }
 .side-nav a:hover { color: var(--text); text-decoration: none; }
-.side-nav a.active { color: var(--accent); border-left-color: var(--accent); }
+.side-nav a.active { color: var(--accent); }
+.side-nav { position: relative; }
+.nav-spacer { display: none; height: 0; }
+.nav-marker {
+  position: absolute; left: -1px; top: 0; width: 2px; height: 0; background: var(--accent);
+  border-radius: 2px; pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 .side-nav { order: 1; }
 .side-contact { order: 2; margin-top: auto; font-size: 0.88rem; }
@@ -227,6 +315,23 @@ h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; margin: 2.2
 @media (max-width: 1280px) { .proj-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .proj-note { font-size: 0.88rem; color: var(--text-light); margin-top: 1rem; max-width: 80ch; }
 
+/* ─────────── CITE ─────────── */
+.cite-toggle { background: none; border: none; padding: 0; cursor: pointer; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--text-light); display: inline-flex; align-items: center; gap: 0.35rem; }
+.cite-toggle:hover { color: var(--accent); }
+.cite-toggle .chev { font-size: 0.65rem; transition: transform 0.25s var(--ease); }
+.cite-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.entry > div { min-width: 0; }
+.cite-box { display: none; margin-top: 0.8rem; padding: 0.9rem 1.1rem 1rem; max-width: 80ch; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; }
+.cite-box.open { display: block; animation: fade 0.3s var(--ease); }
+.cite-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.cite-row + .cite-apa, .cite-row + .cite-bib { margin-top: 0.35rem; }
+.cite-apa + .cite-row { margin-top: 0.9rem; }
+.cite-fmt { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.cite-apa { font-size: 0.9rem; line-height: 1.6; color: var(--text); padding-left: 1.6em; text-indent: -1.6em; overflow-wrap: anywhere; }
+.cite-bib { font-family: var(--mono); font-size: 0.76rem; line-height: 1.5; color: var(--text-light); background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.7rem 0.8rem; overflow-x: auto; white-space: pre; margin: 0; }
+.copy-btn { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.7rem; min-height: 30px; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text-light); cursor: pointer; }
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
 /* ─────────── TEACHING ─────────── */
 .course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .course { border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; background: var(--card-bg); transition: all 0.25s var(--ease); }
@@ -323,6 +428,68 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 
 #education .list li { gap: 1.5rem; }
 
+/* ─────────── PERSONAL TOUCHES ─────────── */
+/* Malayalam hello */
+.hello {
+  display: inline-grid; margin-bottom: 0.15rem; padding: 0; border: none; background: none; cursor: default;
+  color: var(--accent); line-height: 1.2; text-align: left;
+}
+.hello > span { grid-area: 1 / 1; transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); }
+.hello .ml { font-family: 'Manjari', var(--sans); font-size: 1.15rem; font-weight: 700; }
+.hello .en { font-family: var(--serif); font-style: italic; font-size: 1.2rem; font-weight: 600; opacity: 0; transform: translateY(6px); }
+.hello:hover .ml, .hello:focus-visible .ml, .hello.flip .ml { opacity: 0; transform: translateY(-6px); }
+.hello:hover .en, .hello:focus-visible .en, .hello.flip .en { opacity: 1; transform: none; }
+.hello:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* margin notes */
+main { overflow-x: clip; }
+.mn {
+  position: relative; cursor: help; color: inherit; outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='6' viewBox='0 0 40 6'%3E%3Cpath d='M0 3.5 Q5 1 10 3.5 T20 3.5 T30 3.5 T40 3.5' fill='none' stroke='%23B71C1C' stroke-width='1.3' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
+  background-repeat: repeat-x; background-position: 0 100%; background-size: 22px 5px; padding-bottom: 3px;
+}
+strong .mn, .mn strong { font-weight: 600; }
+.mn-note {
+  position: absolute; left: -0.25rem; bottom: calc(100% + 0.45rem); z-index: 5;
+  width: max-content; max-width: min(250px, calc(100vw - 2rem));
+  font-family: var(--hand); font-size: 1.28rem; font-weight: 500; line-height: 1.15; font-style: normal; white-space: normal;
+  color: var(--accent); background: var(--bg); padding: 0.3rem 0.55rem 0.35rem;
+  border: 1.5px solid var(--accent); border-radius: 12px 4px 14px 3px;
+  box-shadow: 3px 3px 0 var(--accent-light);
+  opacity: 0; transform: translate(var(--dx, 0px), 6px) rotate(-1.5deg); pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.mn:hover .mn-note, .mn:focus .mn-note { opacity: 1; transform: translate(var(--dx, 0px), 0) rotate(-1.5deg); }
+.mn:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+/* footer line */
+.motto { font-family: var(--hand); font-size: 1.55rem; line-height: 1.25; color: var(--text); margin-bottom: 0.6rem; }
+@media (prefers-reduced-motion: reduce) {
+  .hello > span, .mn-note { transition: none; }
+}
+
+/* ─────────── MOVEMENT ─────────── */
+.read-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60;
+  background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+}
+.to-top {
+  position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer;
+  background: var(--card-bg); color: var(--accent); border: 1px solid var(--border); box-shadow: var(--shadow);
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.2s;
+}
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--accent); }
+.to-top svg { width: 18px; height: 18px; stroke: currentColor; }
+.side-nav a:focus-visible, .to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-marker, .to-top { transition: none; }
+}
+
+
 /* ─────────── REVEAL ─────────── */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
 .reveal.show { opacity: 1; transform: none; }
@@ -348,26 +515,91 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   }
   .side-nav a { border-left: none; padding: 0.3rem 0.7rem; white-space: nowrap; border-radius: 20px; }
   .side-nav a.active { background: var(--accent-light); }
+  .nav-marker { display: none; }
+  .nav-spacer { display: block; }
+  .side-nav.pinned {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 40; margin: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: none;
+  }
+  .side-nav { scroll-behavior: smooth; scrollbar-width: none; }
+  .side-nav::-webkit-scrollbar { display: none; }
+  .to-top { right: 1rem; bottom: 1rem; }
   .side-nav, .side-contact { order: 0; }
   .side-contact { margin-top: 1.25rem; }
   main { padding: 1rem 1rem 2rem; }
   h2 { font-size: 1.65rem; }
   .about-lead { font-size: 1.35rem; }
   .themes, .course-grid, .two-col, .grants, .proj-grid, .proj-grid.three { grid-template-columns: 1fr; }
-  .entry, .edu, .list li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .entry, .edu, .list li { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
+}
+/* ─────────── PRINT: a clean, everything-open copy ─────────── */
+@media print {
+  :root, :root[data-theme] {
+    --bg: #fff; --bg-alt: #fff; --text: #1d2733; --text-light: #3c4752; --text-muted: #6b7682;
+    --accent: #9b1515; --accent-light: #fff; --border: #d9dde3; --card-bg: #fff; --shadow: none;
+  }
+  @page { margin: 16mm 15mm; }
+  html { scroll-behavior: auto; }
+  body { font-size: 9.5pt; line-height: 1.38; background: #fff; }
+  .layout { display: block; max-width: none; }
+  .sidebar { position: static; height: auto; overflow: visible; border: none; padding: 0 0 6mm; display: block; }
+  .avatar, .hello, .side-nav, .nav-spacer, .theme-btn, .side-links, .read-progress, .to-top,
+  .view-toggle, .tabs, .abs-toggle, .cite-toggle, .abstract, .cite-box, .mn-note, .proj-thumb, .expand-btn { display: none !important; }
+  .side-contact { margin-top: 2mm; }
+  .side-contact .row { display: inline-flex; margin-right: 6mm; }
+  main { padding: 0; overflow: visible; }
+  section { padding: 4mm 0; break-inside: auto; }
+  .eyebrow { margin-bottom: 1mm; } .lede { margin-bottom: 3mm; }
+  .about-grid { grid-template-columns: 1.4fr 1fr; }
+  .diss { padding: 4mm; break-inside: avoid; } .stats { margin-top: 3mm; padding-top: 3mm; gap: 2mm; } .stat-num { font-size: 14pt; }
+  .themes { margin-top: 5mm; }
+  .proj-grid, .proj-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3mm; }
+  .proj-body { padding: 3mm; } .proj-title { font-size: 11pt; } .proj-desc { font-size: 8.5pt; } .proj-facts { display: none; }
+  .course-grid, .two-col, .grants, .themes { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .themes { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .list li { grid-template-columns: 18mm minmax(0, 1fr) !important; }
+  .course-grid { gap: 3mm; } .course { padding: 3mm; }
+  .list li { padding: 1.2mm 0; }
+  .timeline .tl { padding-bottom: 2.5mm; }
+  h2 { font-size: 14pt; margin-bottom: 1mm; } h3 { font-size: 11pt; margin: 4mm 0 1.5mm; }
+  .about-lead { font-size: 13pt; max-width: none; }
+  .about-grid, .themes { gap: 6mm; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .mn { background: none; padding: 0; }
+  a { color: inherit; text-decoration: none; }
+  .paper-link { color: var(--accent); }
+  /* every tab and both experience groups, labelled */
+  #research #p-selected { display: none !important; }
+  #research .panel { display: block !important; animation: none; }
+  #research .panel::before { display: block; font-family: var(--serif); font-weight: 600; font-size: 12pt; margin: 5mm 0 1mm; }
+  #p-journal::before { content: 'Journal articles'; }
+  #p-proc::before { content: 'Conference proceedings'; }
+  #p-books::before { content: 'Books & chapters'; }
+  #p-talks::before { content: 'Talks & workshops'; }
+  #p-public::before { content: 'Public scholarship'; }
+  #experience .tl { display: block !important; }
+  #experience .tl[data-first]::before { content: attr(data-first); position: static; display: block; width: auto; height: auto; border: none; background: none; font-family: var(--serif); font-weight: 600; font-size: 12pt; margin: 4mm 0 1mm -1.75rem; }
+    .entry, .tl, .course, .proj, .edu, .list li, .grant { break-inside: avoid; }
+  .entry { padding: 1.4mm 0; grid-template-columns: 22mm minmax(0, 1fr); gap: 3mm; }
+  .edu { padding: 2mm 0; grid-template-columns: 22mm minmax(0, 1fr); gap: 3mm; }
+  .proj, .course, .diss { box-shadow: none; }
+  footer { padding-top: 4mm; }
 }
 </style>
 </head>
 <body>
+<div class="read-progress" id="readProgress" aria-hidden="true"></div>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div class="layout">
 
 <!-- ═════════════ SIDEBAR ═════════════ -->
 <aside class="sidebar">
   <div class="avatar" id="avatar">
-    <img src="https://sgakhil.github.io/assets/images/header/avatar.jpg" alt="Portrait of Akhil S. G." onerror="this.remove(); document.getElementById('avatar').textContent='AS';">
+    <img src="https://sgakhil.github.io/assets/images/header/avatar.jpg" alt="Portrait of Akhil S. G." onerror="this.remove(); document.getElementById('avatar').textContent='SG';">
   </div>
+  <button type="button" class="hello" id="hello" aria-label="Hello, written in Malayalam script"><span class="ml" lang="ml" aria-hidden="true">ഹലോ!</span><span class="en" aria-hidden="true">hello!</span></button>
   <div class="name">Akhil S. G.</div>
-  <div class="fullname">Akhil Sarangadharan GeethaKumari (he/him/his)</div>
+  <div class="fullname">Akhil Sarangadharan GeethaKumari<br><span class="pronouns">(he/him/his)</span></div>
   <div class="tagline">Researcher · Social Entrepreneur</div>
   <div class="affil">PhD Candidate, Information Systems<br>Weatherhead School of Management<br>Case Western Reserve University</div>
 
@@ -384,6 +616,8 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
       <a href="https://scholar.google.com/citations?hl=en&user=H8hewOwAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       <a href="https://www.linkedin.com/in/aklsg/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://medium.com/@aklsg" target="_blank" rel="noopener">Medium</a>
+      <a href="https://orcid.org/0009-0001-3479-7391" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/sgakhil" target="_blank" rel="noopener">GitHub</a>
     </div>
     <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode"><span id="themeIcon">🌙</span><span id="themeLabel">Dark mode</span></button>
   </div>
@@ -409,9 +643,9 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 
   <div class="about-grid">
     <div class="prose">
-      <p>I'm a PhD candidate in Management (Information Systems) at the Weatherhead School of Management, Case Western Reserve University, graduating by May 2027. My dissertation is a 25-month ethnography of radiologists working alongside FDA-cleared AI models — tracing how epistemic trust forms, why doubt does useful work, and how much invisible labor goes into making AI outputs usable in everyday practice.</p>
-      <p>Alongside this, I study <strong>algorithmic management</strong> — power, precarity, and loneliness in platform work — and <strong>health data infrastructures</strong>, as part of the NIH/NCI-funded team building PopCASE, a population cancer data platform.</p>
-      <p>Before the PhD, I trained as a mechanical engineer and in nonprofit management. In 2013 I co-founded <strong><a href="https://sahridhaya.org/" target="_blank" rel="noopener">Sahridhaya</a></strong>, a youth-focused nonprofit in Kerala, and later worked with Kerala Startup Mission and the International Centre for Free and Open-Source Software on innovation programs and assistive technology.</p>
+      <p>I'm a PhD candidate in Management (Information Systems) at the Weatherhead School of Management, Case Western Reserve University, graduating by May 2027. My dissertation is a 25-month ethnography of radiologists working alongside FDA-cleared AI models — tracing how <span class="mn" tabindex="0" data-note="Can radiologists trust an AI model? Case by case, until one error breaks it.">epistemic trust</span> forms, why <span class="mn" tabindex="0" data-note="Resistance looks like an obstacle. I argue it is a condition for safe use.">doubt does useful work</span>, and how much <span class="mn" tabindex="0" data-note="What did you see? The AI model can't say, so the radiologist works it out.">invisible labor</span> goes into making AI outputs usable in everyday practice.</p>
+      <p>Alongside this, I study <strong><span class="mn" tabindex="0" data-note="When the algorithm becomes the manager, who bears the cost?">algorithmic management</span></strong> — power, precarity, and loneliness in platform work — and <strong>health data infrastructures</strong>, as part of the NIH/NCI-funded team building PopCASE, a population cancer data platform.</p>
+      <p>Before the PhD, I trained as a <span class="mn" tabindex="0" data-note="A recovering engineer, maybe more social engineer now.">mechanical engineer</span> and in nonprofit management. In 2013 I co-founded <strong><a href="https://sahridhaya.org/" target="_blank" rel="noopener">Sahridhaya</a></strong>, a youth-focused nonprofit in Kerala, and later worked with Kerala Startup Mission and the International Centre for Free and Open-Source Software on innovation programs and assistive technology.</p>
     </div>
 
     <div class="diss">
@@ -452,11 +686,11 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   <div class="research-bar">
   <div class="tabs" role="tablist" data-tabs="research">
     <button class="tab active" data-panel="p-selected">Highlights</button>
-    <button class="tab" data-panel="p-journal">Journal articles <span class="count">2</span></button>
-    <button class="tab" data-panel="p-proc">Conference proceedings <span class="count">7</span></button>
-    <button class="tab" data-panel="p-books">Books & chapters <span class="count">5</span></button>
+    <button class="tab" data-panel="p-journal">Journal articles <span class="count"></span></button>
+    <button class="tab" data-panel="p-proc">Conference proceedings <span class="count"></span></button>
+    <button class="tab" data-panel="p-books">Books & chapters <span class="count"></span></button>
     <button class="tab" data-panel="p-talks">Talks & workshops</button>
-    <button class="tab" data-panel="p-public">Public scholarship <span class="count">3</span></button>
+    <button class="tab" data-panel="p-public">Public scholarship <span class="count"></span></button>
   </div>
   <div class="view-toggle" role="group" aria-label="Publication view">
     <button type="button" data-view="compact" aria-pressed="true">Compact</button>
@@ -465,352 +699,23 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
   </div>
 
   <!-- HIGHLIGHTS -->
-  <div class="panel active" id="p-selected">
-    <ul class="entries">
-      <li class="entry" data-paper="cci">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-kind">Journal article</div>
-          <div class="entry-title">Understanding the Needs and Challenges of Cancer Registry Stakeholders</div>
-          <div class="entry-authors">Rose, J.†, <b>S. G., Akhil</b>†, Koroukian, S. M., Kim, U., & Lyytinen, K. <span class="muted">(†co-first authors)</span></div>
-          <div class="entry-venue"><i>JCO Clinical Cancer Informatics</i>, 10(2), e2500168</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="routledge">
-        <div class="entry-year">2027</div>
-        <div>
-          <div class="entry-kind">Book</div>
-          <div class="entry-title">Algorithmic Management: Artificial Intelligence and the Transformation of Organizations</div>
-          <div class="entry-authors">Poonamallee, L., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">Routledge · Forthcoming March 2027</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="amcis26">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-kind">Conference proceeding</div>
-          <div class="entry-title">Invisible Labor of Argumentation: Ethnography of Radiologists Using AI</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Americas Conference on Information Systems (AMCIS)</div>
-          <div class="badges"><span class="badge">Top 25% Paper</span></div>
-        </div>
-      </li>
-      <li class="entry" data-paper="mwais26">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-kind">Conference proceeding</div>
-          <div class="entry-title">Don't Design Away Doubt: Why Epistemic Trust Needs Doubt in AI Workflows</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Midwest Association for Information Systems (MWAIS)</div>
-          <div class="badges"><span class="badge">Best Student Paper Award</span></div>
-        </div>
-      </li>
-      <li class="entry" data-paper="dsi25">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-kind">Conference proceeding</div>
-          <div class="entry-title">Emerging Epistemic Trust in Human–AI Delegation: Decision-Making in Knowledge Work</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Decision Sciences Institute (DSI) Annual Conference</div>
-          <div class="badges"><span class="badge">Best Conceptual Research Paper Award</span></div>
-        </div>
-      </li>
-      <li class="entry" data-paper="book">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-kind">Edited book</div>
-          <div class="entry-title">Technology, Management, and Design for Social Justice: Critical Perspectives on Innovation, Equity, and Power</div>
-          <div class="entry-authors">Poonamallee, L., Joy, S., Scillitoe, J. L., Howard, A., & <b>S. G., Akhil</b> (Eds.)</div>
-          <div class="entry-venue">Palgrave Macmillan</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="panel active" id="p-selected">  </div>
 
   <!-- JOURNAL -->
-  <div class="panel" id="p-journal">
-    <ul class="entries">
-      <li class="entry" data-paper="cci">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">Understanding the Needs and Challenges of Cancer Registry Stakeholders</div>
-          <div class="entry-authors">Rose, J.†, <b>S. G., Akhil</b>†, Koroukian, S. M., Kim, U., & Lyytinen, K. <span class="muted">(†co-first authors)</span></div>
-          <div class="entry-venue"><i>JCO Clinical Cancer Informatics</i>, 10(2), e2500168</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="popcase">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">The Population Cancer Assessment and Surveillance Engine (PopCASE): An Emerging Population Cancer Data Platform</div>
-          <div class="entry-authors">Rose, J., Hussain, F., Sahoo, S. S., Lyytinen, K., Song, S., Menegay, H. J., Lanese, R., <b>S. G., Akhil</b>, Liu, L., Tsui, J., Beno, M., Burus, T., & Koroukian, S. M.</div>
-          <div class="entry-venue"><i>Journal of Registry Management</i>, 52(4), 151–154</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="panel" id="p-journal">  </div>
 
   <!-- PROCEEDINGS -->
-  <div class="panel" id="p-proc">
-    <ul class="entries">
-      <li class="entry" data-paper="icis26">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">Invisible Labor of Argumentation: How Radiologists Interpret AI in Everyday Practice</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">International Conference on Information Systems (ICIS)</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="aom26">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">When Knowing Is Unknowable: Trust and Distributed Cognition in Human–AI Systems</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Academy of Management Proceedings</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="amcis26">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">Invisible Labor of Argumentation: Ethnography of Radiologists Using AI</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Americas Conference on Information Systems (AMCIS)</div>
-          <div class="badges"><span class="badge">Top 25% Paper</span></div>
-        </div>
-      </li>
-      <li class="entry" data-paper="mwais26">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">Don't Design Away Doubt: Why Epistemic Trust Needs Doubt in AI Workflows</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Midwest Association for Information Systems (MWAIS)</div>
-          <div class="badges"><span class="badge">Best Student Paper Award</span></div>
-        </div>
-      </li>
-      <li class="entry" data-paper="icis25">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Distributed Cognition and Human–AI Delegation in Knowledge Work</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">International Conference on Information Systems (ICIS)</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="dsi25">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Emerging Epistemic Trust in Human–AI Delegation: Decision-Making in Knowledge Work</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Decision Sciences Institute (DSI) Annual Conference</div>
-          <div class="badges"><span class="badge">Best Conceptual Research Paper Award</span></div>
-        </div>
-      </li>
-      <li class="entry" data-paper="aom25">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Continued Augmentation in Metahuman Systems: Phase of Trust Building</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Academy of Management Proceedings</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="panel" id="p-proc">  </div>
 
   <!-- BOOKS -->
-  <div class="panel" id="p-books">
-    <div class="group-label">Books</div>
-    <ul class="entries">
-      <li class="entry" data-paper="routledge">
-        <div class="entry-year">2027</div>
-        <div>
-          <div class="entry-kind">Authored book</div>
-          <div class="entry-title">Algorithmic Management: Artificial Intelligence and the Transformation of Organizations</div>
-          <div class="entry-authors">Poonamallee, L., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">Routledge · Forthcoming March 2027</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="book">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-kind">Edited book</div>
-          <div class="entry-title">Technology, Management, and Design for Social Justice: Critical Perspectives on Innovation, Equity, and Power</div>
-          <div class="entry-authors">Poonamallee, L., Joy, S., Scillitoe, J. L., Howard, A., & <b>S. G., Akhil</b> (Eds.)</div>
-          <div class="entry-venue">Palgrave Macmillan</div>
-        </div>
-      </li>
-    </ul>
-    <div class="group-label">Book chapters</div>
-    <ul class="entries">
-      <li class="entry" data-paper="chrev">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">Revolutionizing and Balancing Algorithmic Management: Power and Justice</div>
-          <div class="entry-authors">Poonamallee, L., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">In <i>Technology, Management, and Design for Social Justice</i>. Palgrave Macmillan.</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-title">Responsible AI Scaling in Healthcare: A Socio-Tech Venture Framework</div>
-          <div class="entry-authors">Poonamallee, L., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">In J. L. Scillitoe, L. Poonamallee, S. Joy, A. C. Siqueira, & S. Kimakwa (Eds.), <i>The Research Handbook on Socio-Tech Entrepreneurship</i>. Edward Elgar.</div>
-        </div>
-      </li>
-      <li class="entry" data-paper="chcovid">
-        <div class="entry-year">2023</div>
-        <div>
-          <div class="entry-title">Technological Revolution and Evolution of Management Models in the COVID Era: A Social Justice Perspective</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Poonamallee, L.</div>
-          <div class="entry-venue">In L. Poonamallee, A. Howard, & S. Joy (Eds.), <i>Managing for Social Justice: Harnessing Management Theory and Practice for Collective Good</i>. Springer.</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="panel" id="p-books">  </div>
 
 
   <!-- TALKS -->
-  <div class="panel" id="p-talks">
-    <div class="group-label">Presentations</div>
-    <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">Nov 2026</div>
-        <div>
-          <div class="entry-title">Surviving the Algorithm: How Workers Navigate Alienation and Loneliness in Platform Work</div>
-          <div class="entry-authors">Bhowmick, T., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue">4th Global Conference on Caste, Business and Society · University of Melbourne, Australia</div>
-          <div class="badges"><span class="badge neutral">Upcoming</span></div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">Sep 2026</div>
-        <div>
-          <div class="entry-title">Algorithmic Slavery: Unmeasured Relational Precarity in Platform Work</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Bhowmick, T.</div>
-          <div class="entry-venue">Business and Modern Slavery Conference · University of Manchester, UK</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Navigating the Cancer Data Ecosystem: A Social Modeling Perspective</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, Lyytinen, K., & Rose, J.</div>
-          <div class="entry-venue">NAACCR Annual Conference · Hartford, CT</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Continued Augmentation in Metahuman Systems: Phase of Trust Building</div>
-          <div class="entry-authors"><b>S. G., Akhil</b>, & Lyytinen, K.</div>
-          <div class="entry-venue">Biz AI Conference · University of Texas at Dallas</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2021</div>
-        <div>
-          <div class="entry-title">Going Forward from Social Impact to Social Justice: Can Technology Help?</div>
-          <div class="entry-authors">Panelist</div>
-          <div class="entry-venue">Management and Social Justice Conversation Series · The New School</div>
-        </div>
-      </li>
-    </ul>
-    <p class="inline-note">Papers presented at ICIS 2025, AOM 2025 & 2026, AMCIS 2026, MWAIS 2026, and DSI 2025 are listed under Conference proceedings.</p>
-
-    <div class="group-label">Doctoral consortia & research workshops</div>
-    <p class="inline-note"><b>Selected participant, doctoral consortia:</b> AOM 2026 · ICIS 2026 · AMCIS 2026 · MWAIS 2026</p>
-    <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Collective Impact Doctoral Workshop</div>
-          <div class="entry-venue">Mack Institute for Innovation Management, The Wharton School, University of Pennsylvania · Dissertation proposal presentation</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Pre-ICIS Workshop, AIS SIG on the Changing Nature of Work (SIG CNoW)</div>
-          <div class="entry-venue">Presented “Distributed Cognition and Human–AI Delegation in Knowledge Work”</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2024</div>
-        <div>
-          <div class="entry-title">Paper Development Workshop, AIS SIG Digital Innovation, Transformation & Entrepreneurship (SIG DITE)</div>
-          <div class="entry-venue">Presented “Continued Augmentation in Metahuman Systems: Phase of Trust Building”</div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="group-label">Professional development workshops organized · AOM Annual Meeting</div>
-    <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">2025</div>
-        <div>
-          <div class="entry-title">Power, Ethics, Creativity, and Self-Care: Complexities in Field Research in Postcolonial Societies</div>
-          <div class="entry-authors">With T. Bhowmick, R. Mahalingam, P. Barhoi, M. T. Pathak, & S. Chrispal</div>
-          <div class="entry-venue">CTO Division · Copenhagen, Denmark</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2024</div>
-        <div>
-          <div class="entry-title">Artificial Intelligence and Inequality: An Intersectional Approach</div>
-          <div class="entry-authors">With P. Bharati & R. Mahalingam</div>
-          <div class="entry-venue">SIM & CTO Divisions · Chicago, IL</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2024</div>
-        <div>
-          <div class="entry-title">Decolonizing Field Research in a Neoliberal Economy</div>
-          <div class="entry-authors">With T. Bhowmick, R. Mahalingam, V. Doshi, P. Agarrwal, & P. Barhoi</div>
-          <div class="entry-venue">CMS Division · Chicago, IL</div>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2023</div>
-        <div>
-          <div class="entry-title">Managing for Social Justice: Harnessing Management Theory and Practice for Collective Good</div>
-          <div class="entry-authors">With A. Howard & S. Joy</div>
-          <div class="entry-venue">SIM Division · Boston, MA</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="panel" id="p-talks">  </div>
 
   <!-- PUBLIC -->
-  <div class="panel" id="p-public">
-    <ul class="entries">
-      <li class="entry">
-        <div class="entry-year">2026</div>
-        <div>
-          <div class="entry-kind">Essay</div>
-          <div class="entry-title">Building a Cancer Data Commons: A Primer on the Ecosystem</div>
-          <div class="entry-venue"><i>Data Studies Bibliography</i> · June 17, 2026</div>
-          <a class="entry-link" href="https://www.datastudiesbibliography.org/blog/building-a-cancer-data-commons" target="_blank" rel="noopener">Read essay →</a>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2020</div>
-        <div>
-          <div class="entry-kind">Article</div>
-          <div class="entry-title">The New School Is in Crisis</div>
-          <div class="entry-authors">Bardia, A., Yadav, S., Rajapaksha, K., & <b>S. G., Akhil</b></div>
-          <div class="entry-venue"><i>Jacobin</i> · December 2, 2020</div>
-          <a class="entry-link" href="https://jacobin.com/2020/12/the-new-school-nssr-austerity-covid-neoliberalism" target="_blank" rel="noopener">Read article →</a>
-        </div>
-      </li>
-      <li class="entry">
-        <div class="entry-year">2017</div>
-        <div>
-          <div class="entry-kind">Report</div>
-          <div class="entry-title">Kerala Startup Ecosystem Report</div>
-          <div class="entry-venue">Government of Kerala</div>
-          <a class="entry-link" href="https://startupmission.kerala.gov.in/ecosystem" target="_blank" rel="noopener">View report →</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="panel" id="p-public">  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -899,6 +804,13 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 
 <!-- TEACHING -->
 <section id="teaching">
+  <!--
+    To add a syllabus, slides or recording to a course or lecture, paste this
+    line inside its card (or after its title), with your link:
+    <div class="paper-actions"><a class="paper-link" href="https://…" target="_blank" rel="noopener">Syllabus →</a></div>
+    Talks and experience take links in the content lists at the top of the script
+    (the "links" field).
+  -->
   <p class="eyebrow">Teaching</p>
   <h2>Courses & invited lectures</h2>
   <p class="lede">Undergraduate teaching at Case Western Reserve University, plus guest lectures across management, cognitive science, and medicine.</p>
@@ -960,70 +872,7 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
       <button class="tab" data-filter="beyond">Beyond academia</button>
     </div>
 
-    <div class="timeline">
-      <div class="tl" data-cat="academia">
-        <div class="tl-head"><div class="tl-role">Research Team Member, NIH/NCI Cooperative Agreement U01CA284198</div><div class="tl-date">2023 – 2026</div></div>
-        <div class="tl-org">Case Comprehensive Cancer Center <span>· Cleveland</span></div>
-        <div class="tl-desc">Developing PopCASE, a portable informatics tool that integrates patient-level cancer registry data with community-level data on social conditions and health services. I lead user research with registries, researchers, and outreach centers through interviews and group meetings to inform its design. PI: Dr. Johnie Rose; Co-PI: Dr. Kalle Lyytinen.</div>
-      </div>
-      <div class="tl" data-cat="academia">
-        <div class="tl-head"><div class="tl-role">Managing &amp; Production Editor</div><div class="tl-date">2025 – 2026</div></div>
-        <div class="tl-org"><i>Design Issues</i> <span>· MIT Press</span></div>
-      </div>
-      <div class="tl" data-cat="academia">
-        <div class="tl-head"><div class="tl-role">Research Assistant, Office of Strategic Research</div><div class="tl-date">2024 – 2025</div></div>
-        <div class="tl-org">Weatherhead School of Management, CWRU <span>· Cleveland</span></div>
-        <div class="tl-desc">Built a grants database for the school and curated and wrote its weekly newsletter on research activities and opportunities.</div>
-      </div>
-      <div class="tl" data-cat="academia">
-        <div class="tl-head"><div class="tl-role">Research Assistant to Dr. Latha Poonamallee</div><div class="tl-date">2021 – 2022</div></div>
-        <div class="tl-org">Milano School of Management, Policy and Environment, The New School <span>· New York</span></div>
-        <div class="tl-desc">Built a research database on Indian social ventures and studied the legal structure choices of social enterprises.</div>
-      </div>
-      <div class="tl" data-cat="academia">
-        <div class="tl-head"><div class="tl-role">Union Representative</div><div class="tl-date">2020 – 2021</div></div>
-        <div class="tl-org">SENS–UAW, The New School <span>· New York</span></div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Grants Manager (Intern)</div><div class="tl-date">2021</div></div>
-        <div class="tl-org">New York City Economic Development Corporation <span>· New York</span></div>
-        <div class="tl-desc">Wrote grant narratives for state and federal proposals, including HUD CDBG-DR and NYS CFA; improved cost-reasonableness processes to reduce redundancy and prevent mismanagement.</div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Special Projects Manager</div><div class="tl-date">2020 – 2021</div></div>
-        <div class="tl-org">The New School <span>· New York</span></div>
-        <div class="tl-desc">Led the ‘Management and Social Justice’ 2020–21 online conversation series, curating panels across media, education, healthcare, and technology.</div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Researcher, Assistive Technology & Interim Manager, FOSS Incubator</div><div class="tl-date">2017 – 2019</div></div>
-        <div class="tl-org">International Centre for Free and Open-Source Software <span>· Thiruvananthapuram</span></div>
-        <div class="tl-desc">Led an interdisciplinary team using human-centered design to build Kerala's first customizable ergonomic mouse, and redesigned the F-LIP Mouse at 93% lower cost. Created an incubator framework for FOSS startups and served as transitional manager.</div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Technology Innovation Fellow & Consultant</div><div class="tl-date">2016 – 2017</div></div>
-        <div class="tl-org">Kerala Startup Mission <span>· Thiruvananthapuram</span></div>
-        <div class="tl-desc">Led and piloted entrepreneur and investor meetups, facilitated design thinking and leadership workshops, and represented the organization at national and international forums.</div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Relationship Manager (Apprenticeship)</div><div class="tl-date">2015 – 2016</div></div>
-        <div class="tl-org">Mahindra &amp; Mahindra, Automotive and Farm Equipment Business <span>· Thiruvananthapuram</span></div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Co-founder & Managing Trustee</div><div class="tl-date">2013 – Present</div></div>
-        <div class="tl-org"><a href="https://sahridhaya.org/" target="_blank" rel="noopener">Sahridhaya</a> <span>· Thiruvananthapuram</span></div>
-        <div class="tl-desc">Started the nonprofit to create skill-building and community engagement opportunities for young people addressing social issues.</div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Program Director</div><div class="tl-date">2018 – 2019</div></div>
-        <div class="tl-org">CUB – Creating Unique Brains <span>· Thiruvananthapuram</span></div>
-        <div class="tl-desc">Co-wrote the grant proposal, funded by the Kerala State Government, for a pilot under Sahridhaya that brought technology and experiential learning into public schools. Designed the syllabus and taught problem solving and design thinking.</div>
-      </div>
-      <div class="tl" data-cat="beyond">
-        <div class="tl-head"><div class="tl-role">Founding Member & Senior Mentor</div><div class="tl-date">2017 – 2019</div></div>
-        <div class="tl-org">Green Army International <span>· Thiruvananthapuram</span></div>
-        <div class="tl-desc">Co-created a platform introducing students to climate change and waste management through activities and interactive sessions, under the City Government of Trivandrum.</div>
-      </div>
-    </div>
+    <div class="timeline"></div>
 
     <h3>Grants</h3>
     <div class="grants">
@@ -1133,55 +982,749 @@ footer { padding: 2.5rem 0 1rem; font-size: 0.82rem; color: var(--text-muted); }
 </section>
 
 
-<!-- Abstracts: verbatim from publisher pages, or as supplied by the author. -->
-<div id="abstract-store" aria-hidden="true">
-  <div data-abs="icis26">
-    <p>Artificial Intelligence (AI) systems are increasingly embedded in professional reasoning, yet their outputs often arrive as incomplete claims lacking transparent warrants and rebuttals. Drawing on a 25-month ethnography of AI integration in a pioneering Department of Radiology deploying 17 FDA-cleared models across three configurations (automated triage, diagnostic decision support, and second-opinion augmentation), we introduce argumentation labor to describe the cognitive and communicative meta-work required to adjudicate machine-generated reasoning. Using Toulmin's argumentation model and the metahuman systems framework, we identify four forms of this labor (Reconstructive, Comparative, Adjudicative, and Integrative) operationalized through delegation, monitoring, cultivation, and reflection functions. We position argumentation labor as a layered, additive form of invisible labor that extends, rather than replaces, the classical articulation, coordination, and infrastructural work. We show how knowledge experts repairs the limits of machine reasoning and in process absorb asymmetric liability. Recognizing this labor helps design sustainable human-AI collaborative systems in high-stakes domains.</p>
-  </div>
-  <div data-abs="dsi25">
-    <p>This paper brings studies of decision-making into dialogue with two nascent research areas: the impact of technology on workplaces and the trust in technology in the context of the proliferation of Artificial Intelligence (AI). By doing so, the paper addresses the call to go beyond the automation augmentation divide to understand in more nuanced ways the effects produced by the continued augmentation on knowledge work using AI systems. We introduce a theory of trust in AI systems which proposes a dynamic form of trust which emerges when the epistemic relationship between trust and knowing (that technology delivers an expected result) breaks down. This creates doubts in the system performance and leads the user to question the veracity of the AI system’s results. The implications of the dynamic nature of trust are analyzed in the context of radiologists using multiple AI models used in a large Department of Radiology in a research hospital through ethnographic fieldwork. Unlike previous workplace technologies, where trust develops gradually, the trust-building process for each AI model within the system follows a unique path which oscillates between and combines two forms of trust: fleeting and stable. The study pinpoints the transient nature of trust in AI systems, which is shaped by the context and features of the trusting object including data, algorithms, task, user and the user community. The paper posits that trust in metahuman systems (a sociotechnical system where both humans and machines learn independently) necessitates humans to trust the machine and its components in a dynamic manner, because machines continuously learn and co-evolve with humans.</p>
-  </div>
-  <div data-abs="popcase">
-    <p>Spatially linking cancer registry records to information describing the communities where patients live can enhance the utility of registry data. Here, we describe the ongoing development of an application, the Population Cancer Assessment and Surveillance Engine (PopCASE), that will allow central cancer registries or their designees to set up a population cancer data platform linking a registry's data with community data. PopCASE links registry records by patient residential address to demographic, socioeconomic, household, transportation, healthcare access, screening, risk factor, and other community metrics. Users can query the data by demographic, geographic, or disease criteria via a user interface and receive results, including case counts, age-adjusted incidence and mortality, stage at diagnosis, time-to-treatment, and dozens of community measures stratified by county, census place ("municipality"), zip code tabulation area (ZCTA), and census tract. PopCASE may also be used to create patient-level linked research data sets. We anticipate two likely implementation scenarios: 1) a cancer center where a research team with appropriate institutional review board (IRB) approval uses an instance of PopCASE for their catchment-level population cancer research in a secure data environment, and 2) a central cancer registry that hosts their own secure instance of PopCASE.</p>
-  </div>
-  <div data-abs="mwais26">
-    <p>Information Systems research has traditionally treated user resistance as a barrier to be mitigated. This paper argues the opposite: in high-stakes AI workflows, Resistance in Use (RiU) is a necessary condition for safe continuance, not an obstacle to it. Drawing on a 15-month ethnography in a radiology department with 17 deployed AI models, we show that clinicians who treat AI outputs as defeasible warrants, by actively maintaining doubt until grounds for acceptance are established, can produce much safer diagnoses. We ground this argument in formal and cognitive theories of defeasible reasoning (Pollock, 1987; Kern-Isberner, Skovgaard-Olsen, &amp; Spohn, 2021; Gazzo Castañeda &amp; Knauff, 2021), formalizing the relationship between Epistemic Trust (T), Principled Resistance (R), and Automation Bias (AB). The paper's central contribution is the Right to Doubt as a design requirement: the clinician's prerogative to question, override, and bypass algorithmic prompts without penalty. We argue that the design features that drive AI adoption like high reliability claims, low friction, and hidden uncertainty, are precisely those that produce automation bias, making safe continuance and seamless adoption inversely related rather than aligned.</p>
-  </div>
-  <div data-abs="aom26">
-    <p>The study examines how distributed cognition (DCog) is reorganized in AI-augmented radiological practice, where diagnostic reasoning increasingly relies on stochastic, opaque computational systems. While classical accounts of DCog conceptualize knowing as a socially distributed and coordinated activity across people, tools, and environments, they assume epistemic stability, deterministic artifacts, and implicit closure of knowledge claims. Drawing on cognitive ethnography and longitudinal activity mapping in radiology, this paper problematizes these assumptions by analyzing how epistemic trust, redundancy, and monitoring function under conditions of unknowability. The findings show that epistemic trust operates as a routing condition that governs how uncertainty moves through the socio-technical system, shaping transitions between provisional acceptance, validation, escalation, and deferral. Layered redundancies enable AI-generated knowledge claims to become actionable despite epistemic opacity, while simultaneously redistributing the burden of monitoring system performance onto practitioners. By representing distributed cognition as a flow-based system of epistemic state transitions rather than a sequence of stable stages, this study reframes distributed cognition as a form of epistemic governance under stochastic delegation. The paper contributes to debates on human-AI collaboration by identifying trust not as a background condition of coordination, but as an organizing logic that sustains agency and accountability in high-stakes knowledge work.</p>
-  </div>
-  <div data-abs="aom25">
-    <p>The paper brings together two major research areas: the effects of technology in workplaces and trust in technology, in the context of Artificial Intelligence’s (AI) proliferation. By doing so, the paper answers the call to go beyond the automation augmentation debate to understand the nuances caused by the continuance of augmentation on knowledge workers within AI systems. We introduce a theory of trust in AI systems, proposing a dynamic form of trust that emerges when the usual epistemic relationship between trust and knowing (that technology delivers an expected result) is broken. The creation of doubts in the system, due to the occurrences of different types of errors, questions the veracity of the AI model’s results. The implications of this theory are shown in the context of different AI models used in a Department of Radiology, through an extensive ethnographic fieldwork. Unlike previous workplace technologies, where trust is developed gradually, the trust-building process for each AI model follows a unique path, offering a combination of two forms of trust: fleeting and stable. In order to further understanding this phenomenon, the data suggests integrating trusting building with social actions, system functions and the daily work context within the department. The study points to the transient nature of trust in AI systems, which depends on the context and features of the trusting object such as data, algorithm, task, and user or user community. The paper finds that trust in metahuman systems (a sociotechnical system where both humans and machines learn) requires human to trust the machine components, as machines continuously learn and evolve with humans. And this dynamic, context-specific form of trust building must be cultivated and maintained for effective interaction and integration.</p>
-  </div>
-  <div data-abs="cci">
-    <p><b>Purpose</b>Cancer registry data represent an indispensable tool for researchers and community outreach and engagement (COE) professionals seeking to understand and mitigate cancer burden in cancer center catchment areas and beyond. To provide insights into the opportunities and obstacles for innovation in the population cancer data space, we contrast the needs and challenges of three groups of stakeholders with regard to cancer registry data.</p>
-    <p><b>Methods</b>We convened a nationwide panel of 18 population cancer researchers, COE professionals, and central cancer registry officials. We performed qualitative analysis of individual interviews, survey responses, and meeting transcripts to identify the cancer registry data–related needs and challenges of each stakeholder group. We identified distinct functional categories related to registry data applications, and described points of convergence and divergence within each category across the three stakeholder groups.</p>
-    <p><b>Results</b>We completed 8 hours of individual panelist interviews, received 16 survey responses (88.9% response rate), and conducted three meetings of working groups. All stakeholder groups agreed on the value of accurate and representative registry data. Researchers desired granular data (case-level and aggregated by small geographic levels) with more clinically relevant data fields and linked community-level access measures. COE participants valued cancer burden and social drivers of health metrics aggregated at a subcounty level as well as user-friendly data querying and visualization tools. Cancer registry officials described an imperative to comply with mandatory reporting requirements and to protect patient privacy in a setting of resource constraint that can conflict with the data use goals of researchers and COE users.</p>
-    <p><b>Conclusion</b>Population cancer researchers, COE professionals, and cancer registry officials understand the value of registry data, but the priorities of each are misaligned to varying degrees. Further work is needed to understand the elements of successful efforts to expand the utility and use of registry data.</p>
-  </div>
-  <div data-abs="amcis26">
-    <p>Artificial Intelligence (AI) systems are increasingly embedded in professional reasoning, yet their outputs often arrive as incomplete claims lacking transparent warrants and rebuttals. Drawing on a 16-month ethnography of AI integration in a pioneering Department of Radiology deploying 17 FDA-cleared models across three configurations (automated triage, diagnostic decision support, and second-opinion augmentation), we introduce argumentation labor to describe the cognitive and communicative meta-work required to adjudicate machine-generated reasoning. Using Toulmin's argumentation model and the metahuman systems framework, we identify four forms of this labor (Reconstructive, Comparative, Adjudicative, and Integrative) operationalized through delegation, monitoring, cultivation, and reflection. We position argumentation labor as the cognitive successor to articulation work, showing how professional expertise repairs the limits of machine reasoning while professionals absorb asymmetric liability, with direct implications for the design of sustainable human–AI collaborative systems in high-stakes domains.</p>
-  </div>
-  <div data-abs="icis25">
-    <p>This ongoing study explores how human-AI delegation manifests in knowledge-intensive work through ethnographic observation of radiologists using AI-diagnostic tools. We ask: How does task delegation between humans and AI take place in this dynamic knowledge workplace? Using the framework of Distributed Cognition, we analyze how diagnostic process of radiology is collaboratively performed across human-machine configurations. Unlike static and stiff systems of the past, AI introduces indeterminacy and doubts, challenging established assumptions about the process of knowing and trusting. We find that epistemic trust – the confidence in the reliability, truthfulness, and validity of knowledge claims, is neither a given nor a prerequisite, but a dynamically negotiated practice that enables delegation. Epistemic trust helps calibrate human judgment, mitigate automation bias and aversion, and in process sustain agency in high-stakes environments. Current findings point to advancement of distributed knowledge in sociotechnical systems and reveal how trust shapes cognitive delegation in AI systems.</p>
-  </div>
-  <div data-abs="book">
-    <p>Technological and scientific innovation does not simply emerge; it is designed. From organizational systems and data infrastructures to platforms, policies, and everyday tools, design choices shape how power operates, whose knowledge counts, and who benefits from innovation.</p>
-    <p>The book examines how design, management, and technological systems reproduce inequality, and how they can be intentionally reimagined to advance equity, dignity, and planetary wellbeing, through conceptual frameworks and global case studies addressing algorithmic management, climate-oriented innovation, indigenous digital infrastructures, youth innovation ecosystems, and welfare technologies.</p>
-  </div>
-  <div data-abs="chrev">
-    <p>Algorithmic management (AM) restructures workplace authority by displacing human judgment in interpersonal, informational, and decisional roles through computational systems (Mintzberg). Using Fraser's justice framework—redistribution, recognition, and representation—extended by temporal maldistribution, epistemic misrecognition, and scalar misframing, we identify multifaceted harms. Framed within Bodrožić and Adler's cyclical technological transformation theory, we show how exogenous shocks accelerate disruptive "revolutionizing" phases, followed by "balancing" cycles of worker resistance and institutional reform. Our integrated conceptual model provides a roadmap for analyzing and addressing the structural injustices embedded in AM.</p>
-  </div>
-  <div data-abs="chcovid">
-    <p>Technological revolutions have been instigators of new organizational forms and management models for several centuries now. In this chapter, we examine the accelerated adoption and dissemination of digital technologies in workplaces during the COVID-19 pandemic leading to an emergence of a new model of management that needs to rely on the trust and dignity of workers. We specifically examine the dysfunctions of such an accelerated digital revolution from a social justice perspective.</p>
-  </div>
-</div>
 
-<footer>Akhil S. G. · Last updated November 2026</footer>
+<footer>
+  <p class="motto">Wanderer of happiness. Seeker of love. Painter of smiles. One non stop Dreamer.</p>
+  Akhil S. G. · Last updated November 2026
+</footer>
 </main>
 </div>
 
 <script>
+// ═══════════════════════════════════════════════════════════════════
+//  YOUR CONTENT: edit these lists to update the site.
+//  Publications, talks and experience are drawn from here, so adding a
+//  paper means adding one entry below. Nothing else needs to change.
+//
+//  Text formatting: **bold**, *italic*. Plain HTML also works.
+//
+//  PUBLICATION FIELDS (only id, type, year and title are required)
+//    id           short unique name, e.g. 'icis27'
+//    type         'journal' | 'proceedings' | 'book' | 'edited' | 'chapter'
+//                 | 'talk' | 'consortium' | 'workshop' | 'public'
+//    year         shown in the left column, e.g. '2026' or 'Nov 2026'
+//    highlight    1, 2, 3… puts it in the Highlights tab, in that order
+//    kind         label above the title (Public scholarship only)
+//    authors, authorsNote, venue, note
+//    badges       ['Best Student Paper Award']
+//    upcoming     true shows an "Upcoming" tag; upcomingUntil 'YYYY-MM-DD'
+//                 hides it automatically after that date
+//    link         { url: '…', label: 'Read paper' }
+//    links        extra links, e.g. [{ url: '…', label: 'Slides' },
+//                                     { url: '…', label: 'Recording' }]
+//    abstract     ['paragraph', 'paragraph'], abstractLabel, abstractSource
+//    cite         details for the Cite button (APA + BibTeX):
+//                 as: 'article' | 'inproceedings' | 'book' | 'incollection'
+//                 authors/editors: ['Lyytinen, K.', 'S. G., A.']
+//                 journal, volume, issue, pages, booktitle, publisher,
+//                 doi, url, isbn, year (if different), bibYear
+//
+//  Template for a new conference paper:
+//  { id: 'icis27', type: 'proceedings', year: '2027',
+//    title: 'Paper title',
+//    authors: '**S. G., Akhil**, & Lyytinen, K.',
+//    venue: 'International Conference on Information Systems (ICIS)',
+//    link: { url: 'https://…', label: 'Read paper' },
+//    cite: { as: 'inproceedings', authors: ['S. G., A.', 'Lyytinen, K.'],
+//            booktitle: 'ICIS 2027 Proceedings', url: 'https://…' } },
+// ═══════════════════════════════════════════════════════════════════
+const PUBLICATIONS = [
+  {
+    id: 'cci',
+    type: 'journal',
+    year: '2026',
+    highlight: 1,
+    title: 'Understanding the Needs and Challenges of Cancer Registry Stakeholders',
+    authors: 'Rose, J.†, **S. G., Akhil**†, Koroukian, S. M., Kim, U., & Lyytinen, K.',
+    authorsNote: '(†co-first authors)',
+    venue: '*JCO Clinical Cancer Informatics*, 10(2), e2500168',
+    link: { url: 'https://doi.org/10.1200/CCI-25-00168', label: 'Read paper' },
+    abstractSource: 'JCO Clinical Cancer Informatics',
+    abstract: [
+      '**Purpose**Cancer registry data represent an indispensable tool for researchers and community outreach and engagement (COE) professionals seeking to understand and mitigate cancer burden in cancer center catchment areas and beyond. To provide insights into the opportunities and obstacles for innovation in the population cancer data space, we contrast the needs and challenges of three groups of stakeholders with regard to cancer registry data.',
+      '**Methods**We convened a nationwide panel of 18 population cancer researchers, COE professionals, and central cancer registry officials. We performed qualitative analysis of individual interviews, survey responses, and meeting transcripts to identify the cancer registry data–related needs and challenges of each stakeholder group. We identified distinct functional categories related to registry data applications, and described points of convergence and divergence within each category across the three stakeholder groups.',
+      '**Results**We completed 8 hours of individual panelist interviews, received 16 survey responses (88.9% response rate), and conducted three meetings of working groups. All stakeholder groups agreed on the value of accurate and representative registry data. Researchers desired granular data (case-level and aggregated by small geographic levels) with more clinically relevant data fields and linked community-level access measures. COE participants valued cancer burden and social drivers of health metrics aggregated at a subcounty level as well as user-friendly data querying and visualization tools. Cancer registry officials described an imperative to comply with mandatory reporting requirements and to protect patient privacy in a setting of resource constraint that can conflict with the data use goals of researchers and COE users.',
+      '**Conclusion**Population cancer researchers, COE professionals, and cancer registry officials understand the value of registry data, but the priorities of each are misaligned to varying degrees. Further work is needed to understand the elements of successful efforts to expand the utility and use of registry data.',
+    ],
+    cite: {
+      as: 'article',
+      authors: ['Rose, J.', 'S. G., A.', 'Koroukian, S. M.', 'Kim, U.', 'Lyytinen, K.'],
+      journal: 'JCO Clinical Cancer Informatics',
+      volume: '10',
+      issue: '2',
+      pages: 'e2500168',
+      doi: '10.1200/CCI-25-00168',
+    },
+  },
+  {
+    id: 'popcase',
+    type: 'journal',
+    year: '2026',
+    title: 'The Population Cancer Assessment and Surveillance Engine (PopCASE): An Emerging Population Cancer Data Platform',
+    authors: 'Rose, J., Hussain, F., Sahoo, S. S., Lyytinen, K., Song, S., Menegay, H. J., Lanese, R., **S. G., Akhil**, Liu, L., Tsui, J., Beno, M., Burus, T., & Koroukian, S. M.',
+    venue: '*Journal of Registry Management*, 52(4), 151–154',
+    link: { url: 'https://pubmed.ncbi.nlm.nih.gov/42110491/', label: 'View on PubMed' },
+    abstract: [
+      'Spatially linking cancer registry records to information describing the communities where patients live can enhance the utility of registry data. Here, we describe the ongoing development of an application, the Population Cancer Assessment and Surveillance Engine (PopCASE), that will allow central cancer registries or their designees to set up a population cancer data platform linking a registry\'s data with community data. PopCASE links registry records by patient residential address to demographic, socioeconomic, household, transportation, healthcare access, screening, risk factor, and other community metrics. Users can query the data by demographic, geographic, or disease criteria via a user interface and receive results, including case counts, age-adjusted incidence and mortality, stage at diagnosis, time-to-treatment, and dozens of community measures stratified by county, census place ("municipality"), zip code tabulation area (ZCTA), and census tract. PopCASE may also be used to create patient-level linked research data sets. We anticipate two likely implementation scenarios: 1) a cancer center where a research team with appropriate institutional review board (IRB) approval uses an instance of PopCASE for their catchment-level population cancer research in a secure data environment, and 2) a central cancer registry that hosts their own secure instance of PopCASE.',
+    ],
+    cite: {
+      as: 'article',
+      authors: [
+        'Rose, J.',
+        'Hussain, F.',
+        'Sahoo, S. S.',
+        'Lyytinen, K.',
+        'Song, S.',
+        'Menegay, H. J.',
+        'Lanese, R.',
+        'S. G., A.',
+        'Liu, L.',
+        'Tsui, J.',
+        'Beno, M.',
+        'Burus, T.',
+        'Koroukian, S. M.',
+      ],
+      journal: 'Journal of Registry Management',
+      volume: '52',
+      issue: '4',
+      pages: '151–154',
+      url: 'https://pubmed.ncbi.nlm.nih.gov/42110491/',
+    },
+  },
+  {
+    id: 'icis26',
+    type: 'proceedings',
+    year: '2026',
+    title: 'Invisible Labor of Argumentation: How Radiologists Interpret AI in Everyday Practice',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'International Conference on Information Systems (ICIS)',
+    link: { url: 'https://aisel.aisnet.org/icis2026/fow/fow/25', label: 'Read paper' },
+    abstractSource: 'AIS eLibrary',
+    abstract: [
+      'Artificial Intelligence (AI) systems are increasingly embedded in professional reasoning, yet their outputs often arrive as incomplete claims lacking transparent warrants and rebuttals. Drawing on a 25-month ethnography of AI integration in a pioneering Department of Radiology deploying 17 FDA-cleared models across three configurations (automated triage, diagnostic decision support, and second-opinion augmentation), we introduce argumentation labor to describe the cognitive and communicative meta-work required to adjudicate machine-generated reasoning. Using Toulmin\'s argumentation model and the metahuman systems framework, we identify four forms of this labor (Reconstructive, Comparative, Adjudicative, and Integrative) operationalized through delegation, monitoring, cultivation, and reflection functions. We position argumentation labor as a layered, additive form of invisible labor that extends, rather than replaces, the classical articulation, coordination, and infrastructural work. We show how knowledge experts repairs the limits of machine reasoning and in process absorb asymmetric liability. Recognizing this labor helps design sustainable human-AI collaborative systems in high-stakes domains.',
+    ],
+    cite: {
+      as: 'inproceedings',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      booktitle: 'ICIS 2026 Proceedings',
+      url: 'https://aisel.aisnet.org/icis2026/fow/fow/25',
+    },
+  },
+  {
+    id: 'aom26',
+    type: 'proceedings',
+    year: '2026',
+    title: 'When Knowing Is Unknowable: Trust and Distributed Cognition in Human–AI Systems',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'Academy of Management Proceedings',
+    link: { url: 'https://journals.aom.org/doi/abs/10.5465/AMPROC.2026.19755abstract', label: 'Read paper' },
+    abstract: [
+      'The study examines how distributed cognition (DCog) is reorganized in AI-augmented radiological practice, where diagnostic reasoning increasingly relies on stochastic, opaque computational systems. While classical accounts of DCog conceptualize knowing as a socially distributed and coordinated activity across people, tools, and environments, they assume epistemic stability, deterministic artifacts, and implicit closure of knowledge claims. Drawing on cognitive ethnography and longitudinal activity mapping in radiology, this paper problematizes these assumptions by analyzing how epistemic trust, redundancy, and monitoring function under conditions of unknowability. The findings show that epistemic trust operates as a routing condition that governs how uncertainty moves through the socio-technical system, shaping transitions between provisional acceptance, validation, escalation, and deferral. Layered redundancies enable AI-generated knowledge claims to become actionable despite epistemic opacity, while simultaneously redistributing the burden of monitoring system performance onto practitioners. By representing distributed cognition as a flow-based system of epistemic state transitions rather than a sequence of stable stages, this study reframes distributed cognition as a form of epistemic governance under stochastic delegation. The paper contributes to debates on human-AI collaboration by identifying trust not as a background condition of coordination, but as an organizing logic that sustains agency and accountability in high-stakes knowledge work.',
+    ],
+    cite: {
+      as: 'article',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      journal: 'Academy of Management Proceedings',
+      volume: '2026',
+      issue: '1',
+      pages: '19755',
+      doi: '10.5465/AMPROC.2026.19755abstract',
+    },
+  },
+  {
+    id: 'amcis26',
+    type: 'proceedings',
+    year: '2026',
+    highlight: 3,
+    title: 'Invisible Labor of Argumentation: Ethnography of Radiologists Using AI',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'Americas Conference on Information Systems (AMCIS)',
+    badges: ['Top 25% Paper'],
+    link: { url: 'https://aisel.aisnet.org/amcis2026/sigcnow/sigcnow/3/', label: 'Read paper' },
+    abstractSource: 'AIS eLibrary',
+    abstract: [
+      'Artificial Intelligence (AI) systems are increasingly embedded in professional reasoning, yet their outputs often arrive as incomplete claims lacking transparent warrants and rebuttals. Drawing on a 16-month ethnography of AI integration in a pioneering Department of Radiology deploying 17 FDA-cleared models across three configurations (automated triage, diagnostic decision support, and second-opinion augmentation), we introduce argumentation labor to describe the cognitive and communicative meta-work required to adjudicate machine-generated reasoning. Using Toulmin\'s argumentation model and the metahuman systems framework, we identify four forms of this labor (Reconstructive, Comparative, Adjudicative, and Integrative) operationalized through delegation, monitoring, cultivation, and reflection. We position argumentation labor as the cognitive successor to articulation work, showing how professional expertise repairs the limits of machine reasoning while professionals absorb asymmetric liability, with direct implications for the design of sustainable human–AI collaborative systems in high-stakes domains.',
+    ],
+    cite: {
+      as: 'inproceedings',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      booktitle: 'AMCIS 2026 Proceedings',
+      url: 'https://aisel.aisnet.org/amcis2026/sigcnow/sigcnow/3/',
+    },
+  },
+  {
+    id: 'mwais26',
+    type: 'proceedings',
+    year: '2026',
+    highlight: 4,
+    title: 'Don\'t Design Away Doubt: Why Epistemic Trust Needs Doubt in AI Workflows',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'Midwest Association for Information Systems (MWAIS)',
+    badges: ['Best Student Paper Award'],
+    link: {
+      url: 'https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1007&context=mwais2026',
+      label: 'Read paper (PDF)',
+    },
+    abstract: [
+      'Information Systems research has traditionally treated user resistance as a barrier to be mitigated. This paper argues the opposite: in high-stakes AI workflows, Resistance in Use (RiU) is a necessary condition for safe continuance, not an obstacle to it. Drawing on a 15-month ethnography in a radiology department with 17 deployed AI models, we show that clinicians who treat AI outputs as defeasible warrants, by actively maintaining doubt until grounds for acceptance are established, can produce much safer diagnoses. We ground this argument in formal and cognitive theories of defeasible reasoning (Pollock, 1987; Kern-Isberner, Skovgaard-Olsen, & Spohn, 2021; Gazzo Castañeda & Knauff, 2021), formalizing the relationship between Epistemic Trust (T), Principled Resistance (R), and Automation Bias (AB). The paper\'s central contribution is the Right to Doubt as a design requirement: the clinician\'s prerogative to question, override, and bypass algorithmic prompts without penalty. We argue that the design features that drive AI adoption like high reliability claims, low friction, and hidden uncertainty, are precisely those that produce automation bias, making safe continuance and seamless adoption inversely related rather than aligned.',
+    ],
+    cite: {
+      as: 'inproceedings',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      booktitle: 'MWAIS 2026 Proceedings',
+      url: 'https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1007&context=mwais2026',
+    },
+  },
+  {
+    id: 'icis25',
+    type: 'proceedings',
+    year: '2025',
+    title: 'Distributed Cognition and Human–AI Delegation in Knowledge Work',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'International Conference on Information Systems (ICIS)',
+    link: { url: 'https://aisel.aisnet.org/icis2025/conf_theme/conf_theme/5', label: 'Read paper' },
+    abstractSource: 'AIS eLibrary',
+    abstract: [
+      'This ongoing study explores how human-AI delegation manifests in knowledge-intensive work through ethnographic observation of radiologists using AI-diagnostic tools. We ask: How does task delegation between humans and AI take place in this dynamic knowledge workplace? Using the framework of Distributed Cognition, we analyze how diagnostic process of radiology is collaboratively performed across human-machine configurations. Unlike static and stiff systems of the past, AI introduces indeterminacy and doubts, challenging established assumptions about the process of knowing and trusting. We find that epistemic trust – the confidence in the reliability, truthfulness, and validity of knowledge claims, is neither a given nor a prerequisite, but a dynamically negotiated practice that enables delegation. Epistemic trust helps calibrate human judgment, mitigate automation bias and aversion, and in process sustain agency in high-stakes environments. Current findings point to advancement of distributed knowledge in sociotechnical systems and reveal how trust shapes cognitive delegation in AI systems.',
+    ],
+    cite: {
+      as: 'inproceedings',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      booktitle: 'ICIS 2025 Proceedings',
+      url: 'https://aisel.aisnet.org/icis2025/conf_theme/conf_theme/5',
+    },
+  },
+  {
+    id: 'dsi25',
+    type: 'proceedings',
+    year: '2025',
+    highlight: 5,
+    title: 'Emerging Epistemic Trust in Human–AI Delegation: Decision-Making in Knowledge Work',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'Decision Sciences Institute (DSI) Annual Conference',
+    badges: ['Best Conceptual Research Paper Award'],
+    link: {
+      url: 'https://decisionsciences.org/conference/annual-2025/2025-annual-conference-institute-and-conference-award-winners/',
+      label: 'Award announcement',
+    },
+    abstract: [
+      'This paper brings studies of decision-making into dialogue with two nascent research areas: the impact of technology on workplaces and the trust in technology in the context of the proliferation of Artificial Intelligence (AI). By doing so, the paper addresses the call to go beyond the automation augmentation divide to understand in more nuanced ways the effects produced by the continued augmentation on knowledge work using AI systems. We introduce a theory of trust in AI systems which proposes a dynamic form of trust which emerges when the epistemic relationship between trust and knowing (that technology delivers an expected result) breaks down. This creates doubts in the system performance and leads the user to question the veracity of the AI system’s results. The implications of the dynamic nature of trust are analyzed in the context of radiologists using multiple AI models used in a large Department of Radiology in a research hospital through ethnographic fieldwork. Unlike previous workplace technologies, where trust develops gradually, the trust-building process for each AI model within the system follows a unique path which oscillates between and combines two forms of trust: fleeting and stable. The study pinpoints the transient nature of trust in AI systems, which is shaped by the context and features of the trusting object including data, algorithms, task, user and the user community. The paper posits that trust in metahuman systems (a sociotechnical system where both humans and machines learn independently) necessitates humans to trust the machine and its components in a dynamic manner, because machines continuously learn and co-evolve with humans.',
+    ],
+    cite: {
+      as: 'inproceedings',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      booktitle: 'Proceedings of the 2025 Decision Sciences Institute Annual Conference',
+    },
+  },
+  {
+    id: 'aom25',
+    type: 'proceedings',
+    year: '2025',
+    title: 'Continued Augmentation in Metahuman Systems: Phase of Trust Building',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'Academy of Management Proceedings',
+    link: { url: 'https://journals.aom.org/doi/10.5465/AMPROC.2025.22130abstract', label: 'Read paper' },
+    abstract: [
+      'The paper brings together two major research areas: the effects of technology in workplaces and trust in technology, in the context of Artificial Intelligence’s (AI) proliferation. By doing so, the paper answers the call to go beyond the automation augmentation debate to understand the nuances caused by the continuance of augmentation on knowledge workers within AI systems. We introduce a theory of trust in AI systems, proposing a dynamic form of trust that emerges when the usual epistemic relationship between trust and knowing (that technology delivers an expected result) is broken. The creation of doubts in the system, due to the occurrences of different types of errors, questions the veracity of the AI model’s results. The implications of this theory are shown in the context of different AI models used in a Department of Radiology, through an extensive ethnographic fieldwork. Unlike previous workplace technologies, where trust is developed gradually, the trust-building process for each AI model follows a unique path, offering a combination of two forms of trust: fleeting and stable. In order to further understanding this phenomenon, the data suggests integrating trusting building with social actions, system functions and the daily work context within the department. The study points to the transient nature of trust in AI systems, which depends on the context and features of the trusting object such as data, algorithm, task, and user or user community. The paper finds that trust in metahuman systems (a sociotechnical system where both humans and machines learn) requires human to trust the machine components, as machines continuously learn and evolve with humans. And this dynamic, context-specific form of trust building must be cultivated and maintained for effective interaction and integration.',
+    ],
+    cite: {
+      as: 'article',
+      authors: ['S. G., A.', 'Lyytinen, K.'],
+      journal: 'Academy of Management Proceedings',
+      volume: '2025',
+      issue: '1',
+      pages: '22130',
+      doi: '10.5465/AMPROC.2025.22130abstract',
+    },
+  },
+  {
+    id: 'routledge',
+    type: 'book',
+    year: '2027',
+    highlight: 2,
+    title: 'Algorithmic Management: Artificial Intelligence and the Transformation of Organizations',
+    authors: 'Poonamallee, L., & **S. G., Akhil**',
+    venue: 'Routledge · Forthcoming March 2027',
+    link: {
+      url: 'https://www.routledge.com/Algorithmic-Management-Artificial-Intelligence-and-the-Transformation-of-Organizations/Poonamallee-SG/p/book/9781041305682',
+      label: 'View book',
+    },
+    cite: {
+      as: 'book',
+      authors: ['Poonamallee, L.', 'S. G., A.'],
+      year: 'in press',
+      publisher: 'Routledge',
+      isbn: '9781041305682',
+      bibYear: '2027',
+    },
+  },
+  {
+    id: 'book',
+    type: 'edited',
+    year: '2026',
+    highlight: 6,
+    title: 'Technology, Management, and Design for Social Justice: Critical Perspectives on Innovation, Equity, and Power',
+    authors: 'Poonamallee, L., Joy, S., Scillitoe, J. L., Howard, A., & **S. G., Akhil** (Eds.)',
+    venue: 'Palgrave Macmillan',
+    link: { url: 'https://link.springer.com/book/10.1007/978-3-032-20821-7', label: 'View book' },
+    abstractLabel: 'About the book',
+    abstractSource: 'Springer Nature',
+    abstract: [
+      'Technological and scientific innovation does not simply emerge; it is designed. From organizational systems and data infrastructures to platforms, policies, and everyday tools, design choices shape how power operates, whose knowledge counts, and who benefits from innovation.',
+      'The book examines how design, management, and technological systems reproduce inequality, and how they can be intentionally reimagined to advance equity, dignity, and planetary wellbeing, through conceptual frameworks and global case studies addressing algorithmic management, climate-oriented innovation, indigenous digital infrastructures, youth innovation ecosystems, and welfare technologies.',
+    ],
+    cite: {
+      as: 'book',
+      editors: ['Poonamallee, L.', 'Joy, S.', 'Scillitoe, J. L.', 'Howard, A.', 'S. G., A.'],
+      publisher: 'Palgrave Macmillan',
+      doi: '10.1007/978-3-032-20821-7',
+    },
+  },
+  {
+    id: 'chrev',
+    type: 'chapter',
+    year: '2026',
+    title: 'Revolutionizing and Balancing Algorithmic Management: Power and Justice',
+    authors: 'Poonamallee, L., & **S. G., Akhil**',
+    venue: 'In *Technology, Management, and Design for Social Justice*. Palgrave Macmillan.',
+    link: { url: 'https://link.springer.com/chapter/10.1007/978-3-032-20821-7_2', label: 'Read chapter' },
+    abstractSource: 'Springer Nature',
+    abstract: [
+      'Algorithmic management (AM) restructures workplace authority by displacing human judgment in interpersonal, informational, and decisional roles through computational systems (Mintzberg). Using Fraser\'s justice framework—redistribution, recognition, and representation—extended by temporal maldistribution, epistemic misrecognition, and scalar misframing, we identify multifaceted harms. Framed within Bodrožić and Adler\'s cyclical technological transformation theory, we show how exogenous shocks accelerate disruptive "revolutionizing" phases, followed by "balancing" cycles of worker resistance and institutional reform. Our integrated conceptual model provides a roadmap for analyzing and addressing the structural injustices embedded in AM.',
+    ],
+    cite: {
+      as: 'incollection',
+      authors: ['Poonamallee, L.', 'S. G., A.'],
+      editors: ['Poonamallee, L.', 'Joy, S.', 'Scillitoe, J. L.', 'Howard, A.', 'S. G., A.'],
+      booktitle: 'Technology, Management, and Design for Social Justice: Critical Perspectives on Innovation, Equity, and Power',
+      publisher: 'Palgrave Macmillan',
+      doi: '10.1007/978-3-032-20821-7_2',
+    },
+  },
+  {
+    id: 'chresp',
+    type: 'chapter',
+    year: '2026',
+    title: 'Responsible AI Scaling in Healthcare: A Socio-Tech Venture Framework',
+    authors: 'Poonamallee, L., & **S. G., Akhil**',
+    venue: 'In J. L. Scillitoe, L. Poonamallee, S. Joy, A. C. Siqueira, & S. Kimakwa (Eds.), *The Research Handbook on Socio-Tech Entrepreneurship*. Edward Elgar.',
+    cite: {
+      as: 'incollection',
+      authors: ['Poonamallee, L.', 'S. G., A.'],
+      editors: ['Scillitoe, J. L.', 'Poonamallee, L.', 'Joy, S.', 'Siqueira, A. C.', 'Kimakwa, S.'],
+      booktitle: 'The Research Handbook on Socio-Tech Entrepreneurship',
+      publisher: 'Edward Elgar',
+    },
+  },
+  {
+    id: 'chcovid',
+    type: 'chapter',
+    year: '2023',
+    title: 'Technological Revolution and Evolution of Management Models in the COVID Era: A Social Justice Perspective',
+    authors: '**S. G., Akhil**, & Poonamallee, L.',
+    venue: 'In L. Poonamallee, A. Howard, & S. Joy (Eds.), *Managing for Social Justice: Harnessing Management Theory and Practice for Collective Good*. Springer.',
+    link: { url: 'https://link.springer.com/chapter/10.1007/978-3-031-19971-4_7', label: 'Read chapter' },
+    abstractSource: 'Springer Nature',
+    abstract: [
+      'Technological revolutions have been instigators of new organizational forms and management models for several centuries now. In this chapter, we examine the accelerated adoption and dissemination of digital technologies in workplaces during the COVID-19 pandemic leading to an emergence of a new model of management that needs to rely on the trust and dignity of workers. We specifically examine the dysfunctions of such an accelerated digital revolution from a social justice perspective.',
+    ],
+    cite: {
+      as: 'incollection',
+      authors: ['S. G., A.', 'Poonamallee, L.'],
+      editors: ['Poonamallee, L.', 'Howard, A.', 'Joy, S.'],
+      booktitle: 'Managing for Social Justice: Harnessing Management Theory and Practice for Collective Good',
+      publisher: 'Springer',
+      doi: '10.1007/978-3-031-19971-4_7',
+    },
+  },
+  {
+    id: 'surviving-algorithm',
+    type: 'talk',
+    year: 'Nov 2026',
+    title: 'Surviving the Algorithm: How Workers Navigate Alienation and Loneliness in Platform Work',
+    authors: 'Bhowmick, T., & **S. G., Akhil**',
+    venue: '4th Global Conference on Caste, Business and Society · University of Melbourne, Australia',
+    upcoming: true,
+    upcomingUntil: '2026-11-25',
+  },
+  {
+    id: 'algorithmic-slavery',
+    type: 'talk',
+    year: 'Sep 2026',
+    title: 'Algorithmic Slavery: Unmeasured Relational Precarity in Platform Work',
+    authors: '**S. G., Akhil**, & Bhowmick, T.',
+    venue: 'Business and Modern Slavery Conference · University of Manchester, UK',
+  },
+  {
+    id: 'navigating-cancer',
+    type: 'talk',
+    year: '2025',
+    title: 'Navigating the Cancer Data Ecosystem: A Social Modeling Perspective',
+    authors: '**S. G., Akhil**, Lyytinen, K., & Rose, J.',
+    venue: 'NAACCR Annual Conference · Hartford, CT',
+  },
+  {
+    id: 'continued-augmentation',
+    type: 'talk',
+    year: '2025',
+    title: 'Continued Augmentation in Metahuman Systems: Phase of Trust Building',
+    authors: '**S. G., Akhil**, & Lyytinen, K.',
+    venue: 'Biz AI Conference · University of Texas at Dallas',
+  },
+  {
+    id: 'going-forward',
+    type: 'talk',
+    year: '2021',
+    title: 'Going Forward from Social Impact to Social Justice: Can Technology Help?',
+    authors: 'Panelist',
+    venue: 'Management and Social Justice Conversation Series · The New School',
+  },
+  {
+    id: 'collective-impact',
+    type: 'consortium',
+    year: '2025',
+    title: 'Collective Impact Doctoral Workshop',
+    venue: 'Mack Institute for Innovation Management, The Wharton School, University of Pennsylvania · Dissertation proposal presentation',
+  },
+  {
+    id: 'preicis-workshop',
+    type: 'consortium',
+    year: '2025',
+    title: 'Pre-ICIS Workshop, AIS SIG on the Changing Nature of Work (SIG CNoW)',
+    venue: 'Presented “Distributed Cognition and Human–AI Delegation in Knowledge Work”',
+  },
+  {
+    id: 'paper-development',
+    type: 'consortium',
+    year: '2024',
+    title: 'Paper Development Workshop, AIS SIG Digital Innovation, Transformation & Entrepreneurship (SIG DITE)',
+    venue: 'Presented “Continued Augmentation in Metahuman Systems: Phase of Trust Building”',
+  },
+  {
+    id: 'power-ethics',
+    type: 'workshop',
+    year: '2025',
+    title: 'Power, Ethics, Creativity, and Self-Care: Complexities in Field Research in Postcolonial Societies',
+    authors: 'With T. Bhowmick, R. Mahalingam, P. Barhoi, M. T. Pathak, & S. Chrispal',
+    venue: 'CTO Division · Copenhagen, Denmark',
+  },
+  {
+    id: 'artificial-intelligence',
+    type: 'workshop',
+    year: '2024',
+    title: 'Artificial Intelligence and Inequality: An Intersectional Approach',
+    authors: 'With P. Bharati & R. Mahalingam',
+    venue: 'SIM & CTO Divisions · Chicago, IL',
+  },
+  {
+    id: 'decolonizing-field',
+    type: 'workshop',
+    year: '2024',
+    title: 'Decolonizing Field Research in a Neoliberal Economy',
+    authors: 'With T. Bhowmick, R. Mahalingam, V. Doshi, P. Agarrwal, & P. Barhoi',
+    venue: 'CMS Division · Chicago, IL',
+  },
+  {
+    id: 'managing-social',
+    type: 'workshop',
+    year: '2023',
+    title: 'Managing for Social Justice: Harnessing Management Theory and Practice for Collective Good',
+    authors: 'With A. Howard & S. Joy',
+    venue: 'SIM Division · Boston, MA',
+  },
+  {
+    id: 'building-cancer',
+    type: 'public',
+    year: '2026',
+    kind: 'Essay',
+    title: 'Building a Cancer Data Commons: A Primer on the Ecosystem',
+    venue: '*Data Studies Bibliography* · June 17, 2026',
+    link: { url: 'https://www.datastudiesbibliography.org/blog/building-a-cancer-data-commons', label: 'Read essay' },
+  },
+  {
+    id: 'new-school',
+    type: 'public',
+    year: '2020',
+    kind: 'Article',
+    title: 'The New School Is in Crisis',
+    authors: 'Bardia, A., Yadav, S., Rajapaksha, K., & **S. G., Akhil**',
+    venue: '*Jacobin* · December 2, 2020',
+    link: { url: 'https://jacobin.com/2020/12/the-new-school-nssr-austerity-covid-neoliberalism', label: 'Read article' },
+  },
+  {
+    id: 'kerala-startup',
+    type: 'public',
+    year: '2017',
+    kind: 'Report',
+    title: 'Kerala Startup Ecosystem Report',
+    venue: 'Government of Kerala',
+    link: { url: 'https://startupmission.kerala.gov.in/ecosystem', label: 'View report' },
+  },
+];
+
+// Notes shown inside the Talks & workshops tab
+const TALK_NOTES = {
+  Presentations: 'Papers presented at ICIS 2025, AOM 2025 & 2026, AMCIS 2026, MWAIS 2026, and DSI 2025 are listed under Conference proceedings.',
+  'Doctoral consortia & research workshops': '**Selected participant, doctoral consortia:** AOM 2026 · ICIS 2026 · AMCIS 2026 · MWAIS 2026',
+};
+
+//  EXPERIENCE FIELDS: group ('academia' | 'beyond'), role, dates, org,
+//  orgUrl (optional), place (optional), desc (optional),
+//  links (optional), e.g. [{ url: '…', label: 'Project page' }]
+const EXPERIENCE = [
+  {
+    group: 'academia',
+    role: 'Research Team Member, NIH/NCI Cooperative Agreement U01CA284198',
+    dates: '2023 – 2026',
+    org: 'Case Comprehensive Cancer Center',
+    place: 'Cleveland',
+    desc: 'Developing PopCASE, a portable informatics tool that integrates patient-level cancer registry data with community-level data on social conditions and health services. I lead user research with registries, researchers, and outreach centers through interviews and group meetings to inform its design. PI: Dr. Johnie Rose; Co-PI: Dr. Kalle Lyytinen.',
+  },
+  { group: 'academia', role: 'Managing & Production Editor', dates: '2025 – 2026', org: '*Design Issues*', place: 'MIT Press' },
+  {
+    group: 'academia',
+    role: 'Research Assistant, Office of Strategic Research',
+    dates: '2024 – 2025',
+    org: 'Weatherhead School of Management, CWRU',
+    place: 'Cleveland',
+    desc: 'Built a grants database for the school and curated and wrote its weekly newsletter on research activities and opportunities.',
+  },
+  {
+    group: 'academia',
+    role: 'Research Assistant to Dr. Latha Poonamallee',
+    dates: '2021 – 2022',
+    org: 'Milano School of Management, Policy and Environment, The New School',
+    place: 'New York',
+    desc: 'Built a research database on Indian social ventures and studied the legal structure choices of social enterprises.',
+  },
+  { group: 'academia', role: 'Union Representative', dates: '2020 – 2021', org: 'SENS–UAW, The New School', place: 'New York' },
+  {
+    group: 'beyond',
+    role: 'Grants Manager (Intern)',
+    dates: '2021',
+    org: 'New York City Economic Development Corporation',
+    place: 'New York',
+    desc: 'Wrote grant narratives for state and federal proposals, including HUD CDBG-DR and NYS CFA; improved cost-reasonableness processes to reduce redundancy and prevent mismanagement.',
+  },
+  {
+    group: 'beyond',
+    role: 'Special Projects Manager',
+    dates: '2020 – 2021',
+    org: 'The New School',
+    place: 'New York',
+    desc: 'Led the ‘Management and Social Justice’ 2020–21 online conversation series, curating panels across media, education, healthcare, and technology.',
+  },
+  {
+    group: 'beyond',
+    role: 'Researcher, Assistive Technology & Interim Manager, FOSS Incubator',
+    dates: '2017 – 2019',
+    org: 'International Centre for Free and Open-Source Software',
+    place: 'Thiruvananthapuram',
+    desc: 'Led an interdisciplinary team using human-centered design to build Kerala\'s first customizable ergonomic mouse, and redesigned the F-LIP Mouse at 93% lower cost. Created an incubator framework for FOSS startups and served as transitional manager.',
+  },
+  {
+    group: 'beyond',
+    role: 'Technology Innovation Fellow & Consultant',
+    dates: '2016 – 2017',
+    org: 'Kerala Startup Mission',
+    place: 'Thiruvananthapuram',
+    desc: 'Led and piloted entrepreneur and investor meetups, facilitated design thinking and leadership workshops, and represented the organization at national and international forums.',
+  },
+  {
+    group: 'beyond',
+    role: 'Relationship Manager (Apprenticeship)',
+    dates: '2015 – 2016',
+    org: 'Mahindra & Mahindra, Automotive and Farm Equipment Business',
+    place: 'Thiruvananthapuram',
+  },
+  {
+    group: 'beyond',
+    role: 'Co-founder & Managing Trustee',
+    dates: '2013 – Present',
+    org: 'Sahridhaya',
+    orgUrl: 'https://sahridhaya.org/',
+    place: 'Thiruvananthapuram',
+    desc: 'Started the nonprofit to create skill-building and community engagement opportunities for young people addressing social issues.',
+  },
+  {
+    group: 'beyond',
+    role: 'Program Director',
+    dates: '2018 – 2019',
+    org: 'CUB – Creating Unique Brains',
+    place: 'Thiruvananthapuram',
+    desc: 'Co-wrote the grant proposal, funded by the Kerala State Government, for a pilot under Sahridhaya that brought technology and experiential learning into public schools. Designed the syllabus and taught problem solving and design thinking.',
+  },
+  {
+    group: 'beyond',
+    role: 'Founding Member & Senior Mentor',
+    dates: '2017 – 2019',
+    org: 'Green Army International',
+    place: 'Thiruvananthapuram',
+    desc: 'Co-created a platform introducing students to climate change and waste management through activities and interactive sessions, under the City Government of Trivandrum.',
+  },
+];
+
+// ── Build publications, talks and experience from the lists above ──
+const md = s => s == null ? '' : String(s)
+  .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+  .replace(/\*(.+?)\*/g, '<i>$1</i>')
+  .replace(/&(?![a-z#0-9]+;)/gi, '&amp;');
+const plain = h => { const d = document.createElement('div'); d.innerHTML = h; return d.textContent; };
+
+// ── Citations (APA 7 and BibTeX) ──
+const SELF_BIB = '{S. G.}, Akhil';
+const nameFirst = n => { const [last, init] = n.split(/,\s*(?=[^,]+$)/); return init ? `${init} ${last}` : n; };
+const andList = (xs, sep = ', ') => xs.length < 2 ? (xs[0] || '')
+  : xs.length === 2 ? `${xs[0]}${sep === ', ' ? ',' : ''} & ${xs[1]}` : `${xs.slice(0, -1).join(sep)}, & ${xs[xs.length - 1]}`;
+function apa(item) {
+  const c = item.cite, y = c.year || item.year, t = item.title.replace(/\*/g, '');
+  const end = /[?.!]$/.test(t) ? '' : '.';
+  const link = c.doi ? ` https://doi.org/${c.doi}` : c.url ? ` ${c.url}` : '';
+  const A = c.authors ? andList(c.authors) : null;
+  if (c.as === 'article') {
+    const vol = c.volume ? `, <i>${c.volume}</i>${c.issue ? `(${c.issue})` : ''}` : '';
+    return `${A} (${y}). ${t}${end} <i>${c.journal}</i>${vol}${c.pages ? `, ${c.pages}` : ''}.${link}`;
+  }
+  if (c.as === 'inproceedings') return `${A} (${y}). ${t}${end} In <i>${c.booktitle}</i>.${link}`;
+  if (c.as === 'incollection') {
+    const eds = andList(c.editors.map(nameFirst)), ed = c.editors.length > 1 ? 'Eds.' : 'Ed.';
+    return `${A} (${y}). ${t}${end} In ${eds} (${ed}), <i>${c.booktitle}</i>${c.pages ? ` (pp. ${c.pages})` : ''}. ${c.publisher}.${link}`;
+  }
+  if (c.as === 'book') {
+    const who = A ? `${A} (${y}).` : `${andList(c.editors)} (${c.editors.length > 1 ? 'Eds.' : 'Ed.'}). (${y}).`;
+    return `${who} <i>${t}</i>. ${c.publisher}.${link}`;
+  }
+  return '';
+}
+const bibKeys = new Map();
+function bibKey(item) {
+  if (bibKeys.has(item.id)) return bibKeys.get(item.id);
+  const c = item.cite, first = (c.authors || c.editors)[0].split(',')[0].toLowerCase().replace(/[^a-z]/g, '');
+  const word = (item.title.toLowerCase().match(/[a-z]{4,}/g) || ['paper']).find(w => !['with', 'from', 'when', 'what', 'into'].includes(w)) || 'paper';
+  let key = `${first}${(c.bibYear || c.year || item.year).toString().replace(/\D/g, '') || 'inpress'}${word}`, k = key, n = 0;
+  while ([...bibKeys.values()].includes(k)) k = key + 'abcdefghij'[n++];
+  bibKeys.set(item.id, k); return k;
+}
+function bibtex(item) {
+  const c = item.cite, esc = s => String(s).replace(/([&%$#_])/g, '\\$1').replace(/–/g, '--');
+  const who = xs => xs.map(n => n === 'S. G., A.' ? SELF_BIB : n).join(' and ');
+  const type = { article: 'article', inproceedings: 'inproceedings', book: 'book', incollection: 'incollection' }[c.as];
+  const f = [['title', `{${esc(item.title.replace(/\*/g, ''))}}`]];
+  if (c.authors) f.push(['author', who(c.authors)]);
+  if (c.editors) f.push(['editor', who(c.editors)]);
+  if (c.journal) f.push(['journal', esc(c.journal)]);
+  if (c.booktitle) f.push(['booktitle', esc(c.booktitle)]);
+  if (c.volume) f.push(['volume', c.volume]);
+  if (c.issue) f.push(['number', c.issue]);
+  if (c.pages) f.push(['pages', esc(c.pages)]);
+  if (c.publisher) f.push(['publisher', esc(c.publisher)]);
+  f.push(['year', c.bibYear || c.year || item.year]);
+  if (c.year === 'in press') f.push(['note', 'Forthcoming']);
+  if (c.isbn) f.push(['isbn', c.isbn]);
+  if (c.doi) f.push(['doi', c.doi]);
+  if (c.url && !c.doi) f.push(['url', c.url]);
+  return `@${type}{${bibKey(item)},\n${f.map(([k, v]) => `  ${k} = {${v}}`).join(',\n')}\n}`;
+}
+
+// ── One entry ──
+const TYPE_LABEL = { journal: 'Journal article', proceedings: 'Conference proceeding', book: 'Book', edited: 'Edited book', chapter: 'Book chapter' };
+const BOOKS_LABEL = { book: 'Authored book', edited: 'Edited book' };
+const today = new Date().toISOString().slice(0, 10);
+let boxSeq = 0;
+function entry(item, kindLabel) {
+  const n = ++boxSeq;
+  const upcoming = item.upcoming && (!item.upcomingUntil || today <= item.upcomingUntil);
+  const badges = [...(item.badges || []).map(b => `<span class="badge">${md(b)}</span>`),
+                  ...(upcoming ? ['<span class="badge neutral">Upcoming</span>'] : [])];
+  const links = [...(item.link ? [item.link] : []), ...(item.links || [])]
+    .map(l => `<a class="paper-link" href="${l.url}" target="_blank" rel="noopener">${md(l.label)} →</a>`);
+  const actions = [...links];
+  if (item.abstract) actions.push(`<button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-${n}"><span>${item.abstractLabel || 'Abstract'}</span> <span class="chev">▼</span></button>`);
+  if (item.cite) actions.push(`<button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-${n}"><span>Cite</span> <span class="chev">▼</span></button>`);
+  return `<li class="entry" data-paper="${item.id}">
+    <div class="entry-year">${md(item.year)}</div>
+    <div>
+      ${kindLabel ? `<div class="entry-kind">${kindLabel}</div>` : ''}
+      <div class="entry-title">${md(item.title)}</div>
+      ${item.authors ? `<div class="entry-authors">${md(item.authors)}${item.authorsNote ? ` <span class="muted">${md(item.authorsNote)}</span>` : ''}</div>` : ''}
+      ${item.venue ? `<div class="entry-venue">${md(item.venue)}</div>` : ''}
+      ${item.note ? `<div class="entry-note">${md(item.note)}</div>` : ''}
+      ${badges.length ? `<div class="badges">${badges.join('')}</div>` : ''}
+      ${actions.length ? `<div class="paper-actions">${actions.join('')}</div>` : ''}
+      ${item.abstract ? `<div class="abstract" id="abs-${n}">${item.abstract.map(p => `<p>${md(p)}</p>`).join('')}${item.abstractSource ? `<span class="src">Source: ${md(item.abstractSource)}</span>` : ''}</div>` : ''}
+      ${item.cite ? `<div class="cite-box" id="cite-${n}">
+        <div class="cite-row"><span class="cite-fmt">APA</span><button type="button" class="copy-btn" data-copy="apa">Copy</button></div>
+        <p class="cite-apa">${apa(item)}</p>
+        <div class="cite-row"><span class="cite-fmt">BibTeX</span><button type="button" class="copy-btn" data-copy="bib">Copy</button></div>
+        <pre class="cite-bib">${bibtex(item).replace(/&/g, '&amp;').replace(/</g, '&lt;')}</pre>
+      </div>` : ''}
+    </div>
+  </li>`;
+}
+
+// ── Tabs ──
+const pick = (...types) => PUBLICATIONS.filter(i => types.includes(i.type));
+const list = items => `<ul class="entries">${items.join('')}</ul>`;
+const group = label => `<div class="group-label">${md(label)}</div>`;
+const note = text => text ? `<p class="inline-note">${md(text)}</p>` : '';
+const TALK_GROUPS = ['Presentations', 'Doctoral consortia & research workshops', 'Professional development workshops organized · AOM Annual Meeting'];
+const PANELS = {
+  'p-selected': () => list(PUBLICATIONS.filter(i => i.highlight).sort((a, b) => a.highlight - b.highlight)
+                    .map(i => entry(i, i.type === 'public' ? i.kind : TYPE_LABEL[i.type]))),
+  'p-journal': () => list(pick('journal').map(i => entry(i))),
+  'p-proc':    () => list(pick('proceedings').map(i => entry(i))),
+  'p-books':   () => group('Books') + list(pick('book', 'edited').map(i => entry(i, BOOKS_LABEL[i.type])))
+                   + group('Book chapters') + list(pick('chapter').map(i => entry(i))),
+  'p-talks':   () => group(TALK_GROUPS[0]) + list(pick('talk').map(i => entry(i))) + note(TALK_NOTES[TALK_GROUPS[0]])
+                   + group(TALK_GROUPS[1]) + note(TALK_NOTES[TALK_GROUPS[1]]) + list(pick('consortium').map(i => entry(i)))
+                   + group(TALK_GROUPS[2]) + list(pick('workshop').map(i => entry(i))),
+  'p-public':  () => list(pick('public').map(i => entry(i, i.kind))),
+};
+for (const [id, build] of Object.entries(PANELS)) {
+  const panel = document.getElementById(id);
+  if (!panel) continue;
+  panel.innerHTML = build();
+  const count = document.querySelector(`[data-tabs="research"] .tab[data-panel="${id}"] .count`);
+  if (count) count.textContent = panel.querySelectorAll('li.entry').length;
+}
+
+// abstract and cite toggles
+document.getElementById('research').addEventListener('click', e => {
+  const t = e.target.closest('.abs-toggle, .cite-toggle');
+  if (t) {
+    const box = document.getElementById(t.getAttribute('aria-controls'));
+    const open = box.classList.toggle('open');
+    t.setAttribute('aria-expanded', open);
+    return;
+  }
+  const c = e.target.closest('.copy-btn');
+  if (c) {
+    const box = c.closest('.cite-box');
+    const text = c.dataset.copy === 'apa' ? box.querySelector('.cite-apa').textContent : box.querySelector('.cite-bib').textContent;
+    const done = ok => { c.textContent = ok ? 'Copied' : 'Select and copy'; setTimeout(() => { c.textContent = 'Copy'; }, 1600); };
+    const fallback = () => {
+      const r = document.createRange(); r.selectNodeContents(c.dataset.copy === 'apa' ? box.querySelector('.cite-apa') : box.querySelector('.cite-bib'));
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      let ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
+      done(ok);
+    };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => done(true), fallback);
+    else fallback();
+  }
+});
+
+// ── Experience ──
+{
+  const tl = document.querySelector('#experience .timeline');
+  const firstOf = {};
+  if (tl) tl.innerHTML = EXPERIENCE.map(x => `<div class="tl" data-cat="${x.group}"${firstOf[x.group] ? '' : (firstOf[x.group] = ' data-first="' + (x.group === 'academia' ? 'Academia' : 'Beyond academia') + '"')}>
+        <div class="tl-head"><div class="tl-role">${md(x.role)}</div><div class="tl-date">${md(x.dates)}</div></div>
+        <div class="tl-org">${x.orgUrl ? `<a href="${x.orgUrl}" target="_blank" rel="noopener">${md(x.org)}</a>` : md(x.org)}${x.place ? ` <span>· ${md(x.place)}</span>` : ''}</div>
+        ${x.desc ? `<div class="tl-desc">${md(x.desc)}</div>` : ''}
+        ${x.links ? `<div class="paper-actions">${x.links.map(l => `<a class="paper-link" href="${l.url}" target="_blank" rel="noopener">${md(l.label)} →</a>`).join('')}</div>` : ''}
+      </div>`).join('\n');
+}
+
 // Theme toggle (remembered per visitor when storage is available)
 (function () {
   const root = document.documentElement;
@@ -1210,55 +1753,6 @@ document.querySelectorAll('[data-tabs="research"] .tab').forEach(tab => {
   });
 });
 
-// ── Paper links + abstracts ──
-const PAPERS = {
-  cci:     { url: 'https://doi.org/10.1200/CCI-25-00168', label: 'Read paper', src: 'JCO Clinical Cancer Informatics' },
-  popcase: { url: 'https://pubmed.ncbi.nlm.nih.gov/42110491/', label: 'View on PubMed' },
-  amcis26: { url: 'https://aisel.aisnet.org/amcis2026/sigcnow/sigcnow/3/', label: 'Read paper', src: 'AIS eLibrary' },
-  mwais26: { url: 'https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1007&context=mwais2026', label: 'Read paper (PDF)' },
-  icis25:  { url: 'https://aisel.aisnet.org/icis2025/conf_theme/conf_theme/5', label: 'Read paper', src: 'AIS eLibrary' },
-  dsi25:   { url: 'https://decisionsciences.org/conference/annual-2025/2025-annual-conference-institute-and-conference-award-winners/', label: 'Award announcement' },
-  aom25:   { url: 'https://journals.aom.org/doi/10.5465/AMPROC.2025.22130abstract', label: 'Read paper' },
-  icis26:  { url: 'https://aisel.aisnet.org/icis2026/fow/fow/25', label: 'Read paper', src: 'AIS eLibrary' },
-  aom26:   { url: 'https://journals.aom.org/doi/abs/10.5465/AMPROC.2026.19755abstract', label: 'Read paper' },
-  routledge: { url: 'https://www.routledge.com/Algorithmic-Management-Artificial-Intelligence-and-the-Transformation-of-Organizations/Poonamallee-SG/p/book/9781041305682', label: 'View book' },
-  book:    { url: 'https://link.springer.com/book/10.1007/978-3-032-20821-7', label: 'View book', src: 'Springer Nature' },
-  chrev:   { url: 'https://link.springer.com/chapter/10.1007/978-3-032-20821-7_2', label: 'Read chapter', src: 'Springer Nature' },
-  chcovid: { url: 'https://link.springer.com/chapter/10.1007/978-3-031-19971-4_7', label: 'Read chapter', src: 'Springer Nature' },
-};
-document.querySelectorAll('[data-paper]').forEach((li, i) => {
-  const key = li.dataset.paper, meta = PAPERS[key];
-  const body = li.children[1];
-  const actions = document.createElement('div');
-  actions.className = 'paper-actions';
-  if (meta) {
-    const a = document.createElement('a');
-    a.className = 'paper-link'; a.href = meta.url; a.target = '_blank'; a.rel = 'noopener';
-    a.textContent = meta.label + ' →';
-    actions.appendChild(a);
-  }
-  const src = document.querySelector(`#abstract-store [data-abs="${key}"]`);
-  if (src) {
-    const id = `abs-${key}-${i}`;
-    const btn = document.createElement('button');
-    btn.type = 'button'; btn.className = 'abs-toggle';
-    btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', id);
-    btn.innerHTML = '<span>' + (key === 'book' ? 'About the book' : 'Abstract') + '</span> <span class="chev">▼</span>';
-    const box = document.createElement('div');
-    box.className = 'abstract'; box.id = id;
-    box.innerHTML = src.innerHTML + (meta && meta.src ? `<span class="src">Source: ${meta.src}</span>` : '');
-    btn.addEventListener('click', () => {
-      const open = box.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-    });
-    actions.appendChild(btn);
-    body.appendChild(actions);
-    body.appendChild(box);
-  } else if (meta) {
-    body.appendChild(actions);
-  }
-});
-
 // Compact / Detailed view: opens or closes every abstract at once
 document.querySelectorAll('.view-toggle button').forEach(b => {
   b.addEventListener('click', () => {
@@ -1282,16 +1776,109 @@ document.querySelectorAll('[data-filter-group="exp"] .tab').forEach(btn => {
 });
 document.querySelector('[data-filter-group="exp"] .tab.active')?.click();
 
-// Sidebar scrollspy
-const navLinks = [...document.querySelectorAll('#sideNav a')];
-const spy = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+// ── Sidebar: section tracking, sliding marker, progress, back to top ──
+{
+  const nav = document.getElementById('sideNav');
+  const links = [...nav.querySelectorAll('a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const marker = document.createElement('span');
+  marker.className = 'nav-marker'; marker.setAttribute('aria-hidden', 'true');
+  nav.appendChild(marker);
+  const progress = document.getElementById('readProgress');
+  const toTop = document.getElementById('toTop');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = null, lockUntil = 0;
+  // phones: keep the section bar on screen once the header has scrolled away
+  const spacer = document.createElement('div');
+  spacer.className = 'nav-spacer'; nav.before(spacer);
+  const phone = matchMedia('(max-width: 900px)');
+  function pin() {
+    const shouldPin = phone.matches && spacer.getBoundingClientRect().top <= 0;
+    if (shouldPin === nav.classList.contains('pinned')) return;
+    spacer.style.height = shouldPin ? nav.offsetHeight + 'px' : '0px';
+    nav.classList.toggle('pinned', shouldPin);
+  }
+
+  function setActive(id) {
+    if (id === current) return;
+    current = id;
+    links.forEach(a => {
+      const on = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('active', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+    const a = links.find(l => l.getAttribute('href') === '#' + id);
+    if (!a) return;
+    // desktop: slide the marker to the active link
+    marker.style.transform = `translateY(${a.offsetTop}px)`;
+    marker.style.height = a.offsetHeight + 'px';
+    // phones: slide the horizontal bar so the active pill stays in view
+    if (nav.scrollWidth > nav.clientWidth + 4) {
+      nav.scrollTo({ left: a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
     }
+  }
+
+  function update() {
+    pin();
+    const y = window.scrollY, vh = window.innerHeight;
+    const max = document.documentElement.scrollHeight - vh;
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
+    toTop.classList.toggle('show', y > vh * 0.8);
+    if (Date.now() < lockUntil) return;
+    // the active section is the last one whose top has passed a third of the screen;
+    // at the very bottom, the last section wins so short final sections still light up
+    let id = sections[0] && sections[0].id;
+    if (y >= max - 4) id = sections[sections.length - 1].id;
+    else for (const sec of sections) if (sec.getBoundingClientRect().top <= vh * 0.33) id = sec.id;
+    setActive(id);
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { update(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', () => { const id = current; current = null; setActive(id); update(); });
+
+  // clicking a section: highlight it at once, glide there, keep the marker still on the way
+  links.forEach(a => a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    setActive(target.id);
+    lockUntil = Date.now() + (reduce ? 0 : 900);
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    try { history.replaceState(null, '', '#' + target.id); } catch (err) {}
+  }));
+  addEventListener('scrollend', () => { lockUntil = 0; update(); });
+
+  toTop.addEventListener('click', () => {
+    lockUntil = 0;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (err) {}
   });
-}, { rootMargin: '-30% 0px -65% 0px' });
-document.querySelectorAll('main section').forEach(s => spy.observe(s));
+
+  update();
+}
+
+// Margin notes: build each note, and nudge it back on screen near the edges
+document.querySelectorAll('.mn').forEach((mn, i) => {
+  const note = document.createElement('span');
+  note.className = 'mn-note'; note.id = 'mn-' + i; note.setAttribute('role', 'tooltip');
+  note.textContent = mn.dataset.note;
+  mn.appendChild(note); mn.setAttribute('aria-describedby', note.id);
+  const place = () => {
+    note.style.setProperty('--dx', '0px');
+    const r = note.getBoundingClientRect(), pad = 12;
+    let dx = 0;
+    if (r.right > innerWidth - pad) dx = innerWidth - pad - r.right;
+    if (r.left + dx < pad) dx = pad - r.left;
+    note.style.setProperty('--dx', dx + 'px');
+  };
+  mn.addEventListener('mouseenter', place);
+  mn.addEventListener('focus', place);
+});
+
+// Malayalam hello: hover on desktop, tap on touch screens
+document.getElementById('hello').addEventListener('click', e => e.currentTarget.classList.toggle('flip'));
 
 // Gentle reveal on scroll
 const rev = new IntersectionObserver(entries => {
